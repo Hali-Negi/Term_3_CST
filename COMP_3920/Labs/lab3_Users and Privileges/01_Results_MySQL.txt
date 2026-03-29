@@ -1,0 +1,259 @@
++-----------------------------+---------------+--------------------+----------------+--------------+
+| GRANTEE                     | TABLE_CATALOG | TABLE_SCHEMA       | PRIVILEGE_TYPE | IS_GRANTABLE |
++-----------------------------+---------------+--------------------+----------------+--------------+
+| 'mysql.session'@'localhost' | def           | performance_schema | SELECT         | NO           |
+| 'mysql.sys'@'localhost'     | def           | sys                | TRIGGER        | NO           |
++-----------------------------+---------------+--------------------+----------------+--------------+
++-----------------------------+---------------+---------------+--------------+----------------+--------------+
+| GRANTEE                     | TABLE_CATALOG | TABLE_SCHEMA  | TABLE_NAME   | PRIVILEGE_TYPE | IS_GRANTABLE |
++-----------------------------+---------------+---------------+--------------+----------------+--------------+
+| 'HR'@'%'                    | def           | classicmodels | customers    | DELETE         | NO           |
+| 'HR'@'%'                    | def           | classicmodels | customers    | INSERT         | NO           |
+| 'HR'@'%'                    | def           | classicmodels | customers    | SELECT         | NO           |
+| 'HR'@'%'                    | def           | classicmodels | customers    | UPDATE         | NO           |
+| 'HR'@'%'                    | def           | classicmodels | employees    | DELETE         | NO           |
+| 'HR'@'%'                    | def           | classicmodels | employees    | INSERT         | NO           |
+| 'HR'@'%'                    | def           | classicmodels | employees    | SELECT         | NO           |
+| 'HR'@'%'                    | def           | classicmodels | employees    | UPDATE         | NO           |
+| 'HR'@'%'                    | def           | classicmodels | offices      | DELETE         | NO           |
+| 'HR'@'%'                    | def           | classicmodels | offices      | INSERT         | NO           |
+| 'HR'@'%'                    | def           | classicmodels | offices      | SELECT         | NO           |
+| 'HR'@'%'                    | def           | classicmodels | offices      | UPDATE         | NO           |
+| 'Inventory'@'%'             | def           | classicmodels | customers    | DELETE         | NO           |
+| 'Inventory'@'%'             | def           | classicmodels | customers    | INSERT         | NO           |
+| 'Inventory'@'%'             | def           | classicmodels | customers    | SELECT         | NO           |
+| 'Inventory'@'%'             | def           | classicmodels | customers    | UPDATE         | NO           |
+| 'Inventory'@'%'             | def           | classicmodels | orderdetails | DELETE         | NO           |
+| 'Inventory'@'%'             | def           | classicmodels | orderdetails | INSERT         | NO           |
+| 'Inventory'@'%'             | def           | classicmodels | orderdetails | SELECT         | NO           |
+| 'Inventory'@'%'             | def           | classicmodels | orderdetails | UPDATE         | NO           |
+| 'Inventory'@'%'             | def           | classicmodels | orders       | DELETE         | NO           |
+| 'Inventory'@'%'             | def           | classicmodels | orders       | INSERT         | NO           |
+| 'Inventory'@'%'             | def           | classicmodels | orders       | SELECT         | NO           |
+| 'Inventory'@'%'             | def           | classicmodels | orders       | UPDATE         | NO           |
+| 'Inventory'@'%'             | def           | classicmodels | productlines | DELETE         | NO           |
+| 'Inventory'@'%'             | def           | classicmodels | productlines | INSERT         | NO           |
+| 'Inventory'@'%'             | def           | classicmodels | productlines | SELECT         | NO           |
+| 'Inventory'@'%'             | def           | classicmodels | productlines | UPDATE         | NO           |
+| 'Inventory'@'%'             | def           | classicmodels | products     | DELETE         | NO           |
+| 'Inventory'@'%'             | def           | classicmodels | products     | INSERT         | NO           |
+| 'Inventory'@'%'             | def           | classicmodels | products     | SELECT         | NO           |
+| 'Inventory'@'%'             | def           | classicmodels | products     | UPDATE         | NO           |
+| 'Management'@'%'            | def           | classicmodels | customers    | DELETE         | NO           |
+| 'Management'@'%'            | def           | classicmodels | customers    | INSERT         | NO           |
+| 'Management'@'%'            | def           | classicmodels | customers    | SELECT         | NO           |
+| 'Management'@'%'            | def           | classicmodels | customers    | UPDATE         | NO           |
+| 'Management'@'%'            | def           | classicmodels | employees    | DELETE         | NO           |
+| 'Management'@'%'            | def           | classicmodels | employees    | INSERT         | NO           |
+| 'Management'@'%'            | def           | classicmodels | employees    | SELECT         | NO           |
+| 'Management'@'%'            | def           | classicmodels | employees    | UPDATE         | NO           |
+| 'Management'@'%'            | def           | classicmodels | offices      | DELETE         | NO           |
+| 'Management'@'%'            | def           | classicmodels | offices      | INSERT         | NO           |
+| 'Management'@'%'            | def           | classicmodels | offices      | SELECT         | NO           |
+| 'Management'@'%'            | def           | classicmodels | offices      | UPDATE         | NO           |
+| 'Management'@'%'            | def           | classicmodels | orderdetails | DELETE         | NO           |
+| 'Management'@'%'            | def           | classicmodels | orderdetails | INSERT         | NO           |
+| 'Management'@'%'            | def           | classicmodels | orderdetails | SELECT         | NO           |
+| 'Management'@'%'            | def           | classicmodels | orderdetails | UPDATE         | NO           |
+| 'Management'@'%'            | def           | classicmodels | orders       | DELETE         | NO           |
+| 'Management'@'%'            | def           | classicmodels | orders       | INSERT         | NO           |
+| 'Management'@'%'            | def           | classicmodels | orders       | SELECT         | NO           |
+| 'Management'@'%'            | def           | classicmodels | orders       | UPDATE         | NO           |
+| 'Management'@'%'            | def           | classicmodels | payments     | DELETE         | NO           |
+| 'Management'@'%'            | def           | classicmodels | payments     | INSERT         | NO           |
+| 'Management'@'%'            | def           | classicmodels | payments     | SELECT         | NO           |
+| 'Management'@'%'            | def           | classicmodels | payments     | UPDATE         | NO           |
+| 'Management'@'%'            | def           | classicmodels | productlines | DELETE         | NO           |
+| 'Management'@'%'            | def           | classicmodels | productlines | INSERT         | NO           |
+| 'Management'@'%'            | def           | classicmodels | productlines | SELECT         | NO           |
+| 'Management'@'%'            | def           | classicmodels | productlines | UPDATE         | NO           |
+| 'Management'@'%'            | def           | classicmodels | products     | DELETE         | NO           |
+| 'Management'@'%'            | def           | classicmodels | products     | INSERT         | NO           |
+| 'Management'@'%'            | def           | classicmodels | products     | SELECT         | NO           |
+| 'Management'@'%'            | def           | classicmodels | products     | UPDATE         | NO           |
+| 'mysql.session'@'localhost' | def           | mysql         | user         | SELECT         | NO           |
+| 'mysql.sys'@'localhost'     | def           | sys           | sys_config   | SELECT         | NO           |
+| 'Sales'@'%'                 | def           | classicmodels | customers    | DELETE         | NO           |
+| 'Sales'@'%'                 | def           | classicmodels | customers    | INSERT         | NO           |
+| 'Sales'@'%'                 | def           | classicmodels | customers    | SELECT         | NO           |
+| 'Sales'@'%'                 | def           | classicmodels | customers    | UPDATE         | NO           |
+| 'Sales'@'%'                 | def           | classicmodels | orderdetails | DELETE         | NO           |
+| 'Sales'@'%'                 | def           | classicmodels | orderdetails | INSERT         | NO           |
+| 'Sales'@'%'                 | def           | classicmodels | orderdetails | SELECT         | NO           |
+| 'Sales'@'%'                 | def           | classicmodels | orderdetails | UPDATE         | NO           |
+| 'Sales'@'%'                 | def           | classicmodels | orders       | DELETE         | NO           |
+| 'Sales'@'%'                 | def           | classicmodels | orders       | INSERT         | NO           |
+| 'Sales'@'%'                 | def           | classicmodels | orders       | SELECT         | NO           |
+| 'Sales'@'%'                 | def           | classicmodels | orders       | UPDATE         | NO           |
+| 'Sales'@'%'                 | def           | classicmodels | payments     | DELETE         | NO           |
+| 'Sales'@'%'                 | def           | classicmodels | payments     | INSERT         | NO           |
+| 'Sales'@'%'                 | def           | classicmodels | payments     | SELECT         | NO           |
+| 'Sales'@'%'                 | def           | classicmodels | payments     | UPDATE         | NO           |
+| 'Sales'@'%'                 | def           | classicmodels | products     | DELETE         | NO           |
+| 'Sales'@'%'                 | def           | classicmodels | products     | INSERT         | NO           |
+| 'Sales'@'%'                 | def           | classicmodels | products     | SELECT         | NO           |
+| 'Sales'@'%'                 | def           | classicmodels | products     | UPDATE         | NO           |
++-----------------------------+---------------+---------------+--------------+----------------+--------------+
++--------------------------------+---------------+------------------------------+--------------+
+| GRANTEE                        | TABLE_CATALOG | PRIVILEGE_TYPE               | IS_GRANTABLE |
++--------------------------------+---------------+------------------------------+--------------+
+| 'Helen'@'%'                    | def           | USAGE                        | NO           |
+| 'Helen'@'localhost'            | def           | USAGE                        | NO           |
+| 'Henry'@'%'                    | def           | USAGE                        | NO           |
+| 'Henry'@'localhost'            | def           | USAGE                        | NO           |
+| 'HR'@'%'                       | def           | USAGE                        | NO           |
+| 'Ian'@'%'                      | def           | USAGE                        | NO           |
+| 'Ian'@'localhost'              | def           | USAGE                        | NO           |
+| 'Inventory'@'%'                | def           | USAGE                        | NO           |
+| 'Irene'@'%'                    | def           | USAGE                        | NO           |
+| 'Irene'@'localhost'            | def           | USAGE                        | NO           |
+| 'Management'@'%'               | def           | USAGE                        | NO           |
+| 'Mark'@'%'                     | def           | USAGE                        | NO           |
+| 'Mark'@'localhost'             | def           | USAGE                        | NO           |
+| 'Mary'@'%'                     | def           | USAGE                        | NO           |
+| 'Mary'@'localhost'             | def           | USAGE                        | NO           |
+| 'mysql.infoschema'@'localhost' | def           | AUDIT_ABORT_EXEMPT           | NO           |
+| 'mysql.infoschema'@'localhost' | def           | FIREWALL_EXEMPT              | NO           |
+| 'mysql.infoschema'@'localhost' | def           | SELECT                       | NO           |
+| 'mysql.infoschema'@'localhost' | def           | SYSTEM_USER                  | NO           |
+| 'mysql.session'@'localhost'    | def           | AUDIT_ABORT_EXEMPT           | NO           |
+| 'mysql.session'@'localhost'    | def           | AUTHENTICATION_POLICY_ADMIN  | NO           |
+| 'mysql.session'@'localhost'    | def           | BACKUP_ADMIN                 | NO           |
+| 'mysql.session'@'localhost'    | def           | CLONE_ADMIN                  | NO           |
+| 'mysql.session'@'localhost'    | def           | CONNECTION_ADMIN             | NO           |
+| 'mysql.session'@'localhost'    | def           | FIREWALL_EXEMPT              | NO           |
+| 'mysql.session'@'localhost'    | def           | PERSIST_RO_VARIABLES_ADMIN   | NO           |
+| 'mysql.session'@'localhost'    | def           | SESSION_VARIABLES_ADMIN      | NO           |
+| 'mysql.session'@'localhost'    | def           | SHUTDOWN                     | NO           |
+| 'mysql.session'@'localhost'    | def           | SUPER                        | NO           |
+| 'mysql.session'@'localhost'    | def           | SYSTEM_USER                  | NO           |
+| 'mysql.session'@'localhost'    | def           | SYSTEM_VARIABLES_ADMIN       | NO           |
+| 'mysql.sys'@'localhost'        | def           | AUDIT_ABORT_EXEMPT           | NO           |
+| 'mysql.sys'@'localhost'        | def           | FIREWALL_EXEMPT              | NO           |
+| 'mysql.sys'@'localhost'        | def           | SYSTEM_USER                  | NO           |
+| 'mysql.sys'@'localhost'        | def           | USAGE                        | NO           |
+| 'root'@'localhost'             | def           | ALTER                        | YES          |
+| 'root'@'localhost'             | def           | ALTER ROUTINE                | YES          |
+| 'root'@'localhost'             | def           | APPLICATION_PASSWORD_ADMIN   | YES          |
+| 'root'@'localhost'             | def           | AUDIT_ABORT_EXEMPT           | YES          |
+| 'root'@'localhost'             | def           | AUDIT_ADMIN                  | YES          |
+| 'root'@'localhost'             | def           | AUTHENTICATION_POLICY_ADMIN  | YES          |
+| 'root'@'localhost'             | def           | BACKUP_ADMIN                 | YES          |
+| 'root'@'localhost'             | def           | BINLOG_ADMIN                 | YES          |
+| 'root'@'localhost'             | def           | BINLOG_ENCRYPTION_ADMIN      | YES          |
+| 'root'@'localhost'             | def           | CLONE_ADMIN                  | YES          |
+| 'root'@'localhost'             | def           | CONNECTION_ADMIN             | YES          |
+| 'root'@'localhost'             | def           | CREATE                       | YES          |
+| 'root'@'localhost'             | def           | CREATE ROLE                  | YES          |
+| 'root'@'localhost'             | def           | CREATE ROUTINE               | YES          |
+| 'root'@'localhost'             | def           | CREATE TABLESPACE            | YES          |
+| 'root'@'localhost'             | def           | CREATE TEMPORARY TABLES      | YES          |
+| 'root'@'localhost'             | def           | CREATE USER                  | YES          |
+| 'root'@'localhost'             | def           | CREATE VIEW                  | YES          |
+| 'root'@'localhost'             | def           | DELETE                       | YES          |
+| 'root'@'localhost'             | def           | DROP                         | YES          |
+| 'root'@'localhost'             | def           | DROP ROLE                    | YES          |
+| 'root'@'localhost'             | def           | ENCRYPTION_KEY_ADMIN         | YES          |
+| 'root'@'localhost'             | def           | EVENT                        | YES          |
+| 'root'@'localhost'             | def           | EXECUTE                      | YES          |
+| 'root'@'localhost'             | def           | FILE                         | YES          |
+| 'root'@'localhost'             | def           | FIREWALL_EXEMPT              | YES          |
+| 'root'@'localhost'             | def           | FLUSH_OPTIMIZER_COSTS        | YES          |
+| 'root'@'localhost'             | def           | FLUSH_STATUS                 | YES          |
+| 'root'@'localhost'             | def           | FLUSH_TABLES                 | YES          |
+| 'root'@'localhost'             | def           | FLUSH_USER_RESOURCES         | YES          |
+| 'root'@'localhost'             | def           | GROUP_REPLICATION_ADMIN      | YES          |
+| 'root'@'localhost'             | def           | GROUP_REPLICATION_STREAM     | YES          |
+| 'root'@'localhost'             | def           | INDEX                        | YES          |
+| 'root'@'localhost'             | def           | INNODB_REDO_LOG_ARCHIVE      | YES          |
+| 'root'@'localhost'             | def           | INNODB_REDO_LOG_ENABLE       | YES          |
+| 'root'@'localhost'             | def           | INSERT                       | YES          |
+| 'root'@'localhost'             | def           | LOCK TABLES                  | YES          |
+| 'root'@'localhost'             | def           | PASSWORDLESS_USER_ADMIN      | YES          |
+| 'root'@'localhost'             | def           | PERSIST_RO_VARIABLES_ADMIN   | YES          |
+| 'root'@'localhost'             | def           | PROCESS                      | YES          |
+| 'root'@'localhost'             | def           | REFERENCES                   | YES          |
+| 'root'@'localhost'             | def           | RELOAD                       | YES          |
+| 'root'@'localhost'             | def           | REPLICATION CLIENT           | YES          |
+| 'root'@'localhost'             | def           | REPLICATION SLAVE            | YES          |
+| 'root'@'localhost'             | def           | REPLICATION_APPLIER          | YES          |
+| 'root'@'localhost'             | def           | REPLICATION_SLAVE_ADMIN      | YES          |
+| 'root'@'localhost'             | def           | RESOURCE_GROUP_ADMIN         | YES          |
+| 'root'@'localhost'             | def           | RESOURCE_GROUP_USER          | YES          |
+| 'root'@'localhost'             | def           | ROLE_ADMIN                   | YES          |
+| 'root'@'localhost'             | def           | SELECT                       | YES          |
+| 'root'@'localhost'             | def           | SENSITIVE_VARIABLES_OBSERVER | YES          |
+| 'root'@'localhost'             | def           | SERVICE_CONNECTION_ADMIN     | YES          |
+| 'root'@'localhost'             | def           | SESSION_VARIABLES_ADMIN      | YES          |
+| 'root'@'localhost'             | def           | SET_USER_ID                  | YES          |
+| 'root'@'localhost'             | def           | SHOW DATABASES               | YES          |
+| 'root'@'localhost'             | def           | SHOW VIEW                    | YES          |
+| 'root'@'localhost'             | def           | SHOW_ROUTINE                 | YES          |
+| 'root'@'localhost'             | def           | SHUTDOWN                     | YES          |
+| 'root'@'localhost'             | def           | SUPER                        | YES          |
+| 'root'@'localhost'             | def           | SYSTEM_USER                  | YES          |
+| 'root'@'localhost'             | def           | SYSTEM_VARIABLES_ADMIN       | YES          |
+| 'root'@'localhost'             | def           | TABLE_ENCRYPTION_ADMIN       | YES          |
+| 'root'@'localhost'             | def           | TELEMETRY_LOG_ADMIN          | YES          |
+| 'root'@'localhost'             | def           | TRIGGER                      | YES          |
+| 'root'@'localhost'             | def           | UPDATE                       | YES          |
+| 'root'@'localhost'             | def           | XA_RECOVER_ADMIN             | YES          |
+| 'Sales'@'%'                    | def           | USAGE                        | NO           |
+| 'Sally'@'%'                    | def           | USAGE                        | NO           |
+| 'Sally'@'localhost'            | def           | USAGE                        | NO           |
+| 'Sam'@'%'                      | def           | USAGE                        | NO           |
+| 'Sam'@'localhost'              | def           | USAGE                        | NO           |
++--------------------------------+---------------+------------------------------+--------------+
++--------------------------------------+---------------------+
+| uuid()                               | utc_timestamp()     |
++--------------------------------------+---------------------+
+| d651377c-f97e-11f0-a699-9b58e77fc86a | 2026-01-24 23:46:00 |
++--------------------------------------+---------------------+
++-----------------------------------+
+| Grants for Helen@%                |
++-----------------------------------+
+| GRANT USAGE ON *.* TO `Helen`@`%` |
+| GRANT `HR`@`%` TO `Helen`@`%`     |
++-----------------------------------+
++-----------------------------------+
+| Grants for Henry@%                |
++-----------------------------------+
+| GRANT USAGE ON *.* TO `Henry`@`%` |
+| GRANT `HR`@`%` TO `Henry`@`%`     |
++-----------------------------------+
++------------------------------------+
+| Grants for Ian@%                   |
++------------------------------------+
+| GRANT USAGE ON *.* TO `Ian`@`%`    |
+| GRANT `Inventory`@`%` TO `Ian`@`%` |
++------------------------------------+
++--------------------------------------+
+| Grants for Irene@%                   |
++--------------------------------------+
+| GRANT USAGE ON *.* TO `Irene`@`%`    |
+| GRANT `Inventory`@`%` TO `Irene`@`%` |
++--------------------------------------+
++-----------------------------------+
+| Grants for Sally@%                |
++-----------------------------------+
+| GRANT USAGE ON *.* TO `Sally`@`%` |
+| GRANT `Sales`@`%` TO `Sally`@`%`  |
++-----------------------------------+
++---------------------------------+
+| Grants for Sam@%                |
++---------------------------------+
+| GRANT USAGE ON *.* TO `Sam`@`%` |
+| GRANT `Sales`@`%` TO `Sam`@`%`  |
++---------------------------------+
++--------------------------------------+
+| Grants for Mark@%                    |
++--------------------------------------+
+| GRANT USAGE ON *.* TO `Mark`@`%`     |
+| GRANT `Management`@`%` TO `Mark`@`%` |
++--------------------------------------+
++--------------------------------------+
+| Grants for Mary@%                    |
++--------------------------------------+
+| GRANT USAGE ON *.* TO `Mary`@`%`     |
+| GRANT `Management`@`%` TO `Mary`@`%` |
++--------------------------------------+
