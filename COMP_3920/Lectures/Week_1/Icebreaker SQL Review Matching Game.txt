@@ -1,0 +1,179 @@
+Here is the activity we did in class where everyone
+got a card and they had to find another person
+whose query on their card would produce equivalent
+resultsets.
+Example: 1A matches with 1B
+
+
+
+#1A - Count column
+SELECT count(*)
+FROM employee
+JOIN office
+ON employee.office_id = office.office_id;
+
+#1B  NOTE: employee_id is the primary key
+SELECT count(employee_id)
+FROM employee
+JOIN office
+ON employee.office_id = office.office_id;
+
+
+#2A - Change order of table INNER JOIN
+SELECT count(employee_id)
+FROM employee
+JOIN address
+ON employee.address_id = address.address_id;
+
+#2B
+SELECT count(employee_id)
+FROM address
+INNER JOIN employee
+ON employee.address_id = address.address_id;
+
+#3A  - WHERE vs UNION
+SELECT number, street, city
+FROM address
+WHERE province = "BC"
+OR province = "AB";
+
+#3B
+SELECT number, street, city
+FROM address
+WHERE province = "BC"
+UNION
+SELECT number, street, city
+FROM address
+WHERE province = "AB";
+
+#4A  WHERE OR vs IN
+SELECT number, street, city
+FROM address
+WHERE province = "BC"
+OR province = "ON";
+
+#4B
+SELECT number, street, city
+FROM address
+WHERE province IN ("BC", "ON");
+
+#5A - Change order of FK, PK INNER JOIN
+SELECT count(*)
+FROM address
+JOIN office
+ON address.address_id = office.address_id;
+
+#5B
+SELECT count(*)
+FROM address
+INNER JOIN office
+ON office.address_id = address.address_id;
+
+#6A - Swap LEFT/RIGHT
+#NOTE: employee.address_id is allowed to be NULL
+SELECT first_name, last_name
+FROM employee
+LEFT JOIN address
+ON employee.address_id = address.address_id;
+
+#6B 
+#NOTE: employee.address_id is allowed to be NULL
+SELECT first_name, last_name
+FROM address
+RIGHT JOIN employee
+ON employee.address_id = address.address_id;
+
+
+#7A - Swap LEFT/RIGHT
+#NOTE: employee.address_id is allowed to be NULL
+SELECT first_name, last_name
+FROM employee
+RIGHT JOIN address
+ON address.address_id = employee.address_id;
+
+#7B 
+#NOTE: employee.address_id is allowed to be NULL
+SELECT first_name, last_name
+FROM address
+LEFT JOIN employee
+ON address.address_id = employee.address_id;
+
+#8A Triple JOINs
+SELECT first_name, last_name
+FROM address
+JOIN employee
+ON employee.address_id = address.address_id
+JOIN office
+ON office.office_id = employee.office_id;
+
+#8B
+SELECT first_name, last_name
+FROM employee
+JOIN address
+ON employee.address_id = address.address_id
+JOIN office
+ON office.office_id = employee.office_id;
+
+#8C
+SELECT first_name, last_name
+FROM employee
+JOIN office
+ON office.office_id = employee.office_id
+JOIN address
+ON employee.address_id = address.address_id;
+
+
+#9A Triple JOINs
+SELECT first_name, last_name
+FROM employee
+JOIN office
+ON office.office_id = employee.office_id
+JOIN address
+ON office.address_id = address.address_id;
+
+#9B
+SELECT first_name, last_name
+FROM address
+JOIN office
+ON office.address_id = address.address_id
+JOIN employee
+ON office.office_id = employee.office_id;
+
+#9C
+SELECT first_name, last_name
+FROM office
+JOIN address
+ON office.address_id = address.address_id
+JOIN employee
+ON office.office_id = employee.office_id;
+
+#10A - WHERE range
+SELECT first_name, last_name
+FROM employee
+WHERE hire_date <= "2019-12-31"
+AND hire_date >= "2010-01-01";
+
+#10B
+SELECT first_name, last_name
+FROM employee
+WHERE hire_date BETWEEN "2019-12-31"
+AND "2010-01-01";
+
+#11A - Case-ing
+SELECT count(*)
+FROM address
+WHERE province = 'BC';
+
+#11B
+select count(*)
+from address
+where province = 'BC';
+
+#12A - DISTINCT vs GROUP BY
+SELECT DISTINCT first_name, last_name
+FROM employee;
+
+#12B
+SELECT first_name, last_name
+FROM employee
+GROUP BY first_name, last_name;
