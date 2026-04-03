@@ -1,0 +1,12 @@
+PROGRAM:
+=======
+1. A scheme of action, a method of proceeding, or a series of steps, thought out in advance to accomplish a goal.
+2. A software application, or a collection of software applications, designed to perform a specific task.
+3. To enter a program or other instructions into a computer (or other electronic device) to instruct it to do a particular task.
+4. To arrange the schedule of an event.
+HELLO:
+=====
+1. Expression of greeting used by two or more people who meet each other.
+COMPUTER:
+========
+1. A programmable device that performs mathematical calculations and logical operations, especially one that can process, store and retrieve large amounts of data very quickly.
