@@ -1,0 +1,1472 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>exam_with_answers_shared.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+<link rel="stylesheet" href="file:///c%3A/Courses/comp3522-f23/MidtermExam/style.css" type="text/css">
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h2 id="question-1">Question 1</h2>
+<p>What is the output of the following code?</p>
+<p><code>math_operations.py</code> File:</p>
+<pre class="hljs"><code><div><span class="hljs-comment"># math_operations.py</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add</span><span class="hljs-params">(x, y)</span>:</span>
+    result = <span class="hljs-number">0</span>
+    result += x
+    result += y
+    <span class="hljs-keyword">return</span> result
+</div></code></pre>
+<p><code>main.py</code> File:</p>
+<pre class="hljs"><code><div><span class="hljs-comment"># main.py</span>
+
+<span class="hljs-comment"># Import the math_operations module</span>
+<span class="hljs-keyword">from</span> math_operations <span class="hljs-keyword">import</span> add
+
+<span class="hljs-comment"># Perform some operations</span>
+result_add = math_operations.add(<span class="hljs-number">5</span>, <span class="hljs-number">3</span>)
+
+<span class="hljs-comment"># Display the results</span>
+print(<span class="hljs-string">f"Addition: <span class="hljs-subst">{result_add}</span>"</span>)
+</div></code></pre>
+<p>A. NameError will be raised<br>
+B. TypeError will be raised<br>
+C. <code>Addition: 8</code><br>
+D. <code>Addition: 5 + 3</code></p>
+<p>ANSWER: A</p>
+<h2 id="question-2">Question 2</h2>
+<p>Which of the following are valid relationships for the following classes?</p>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Customer</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, customer_id, name, email, address, payment_info)</span>:</span>
+        self.customer_id = customer_id
+        self.name = name
+        self.email = email
+        self.address = address
+        self.payment_info = payment_info
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">update_profile</span><span class="hljs-params">(self, new_info)</span>:</span>
+        <span class="hljs-comment"># Implement profile update logic here</span>
+        <span class="hljs-keyword">pass</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Product</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, product_id, name, description, price, quantity_in_stock)</span>:</span>
+        self.product_id = product_id
+        self.name = name
+        self.description = description
+        self.price = price
+        self.quantity_in_stock = quantity_in_stock
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">update_product_details</span><span class="hljs-params">(self, new_details)</span>:</span>
+        <span class="hljs-comment"># Implement product detail update logic here</span>
+        <span class="hljs-keyword">pass</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CartItem</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, product, quantity)</span>:</span>
+        self.product = product
+        self.quantity = quantity
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ShoppingCart</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, customer)</span>:</span>
+        self.customer = customer
+        self.cart_items = []
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add_to_cart</span><span class="hljs-params">(self, product, quantity)</span>:</span>
+        <span class="hljs-comment"># Implement logic to add products to the cart</span>
+        <span class="hljs-keyword">pass</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">remove_from_cart</span><span class="hljs-params">(self, product)</span>:</span>
+        <span class="hljs-comment"># Implement logic to remove products from the cart</span>
+        <span class="hljs-keyword">pass</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">calculate_total</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-comment"># Calculate the total cost of items in the cart</span>
+        <span class="hljs-keyword">pass</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">checkout</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-comment"># Implement the checkout process, including payment</span>
+        <span class="hljs-keyword">pass</span>
+</div></code></pre>
+<p>A. CartItem has a dependecy relationship with the Product.<br>
+B. ShoppingCart has an aggregation relationship with the CartItem.<br>
+C. ShoppingCart has a composition relationship with the CartItem.<br>
+D. CartItem has a composition relationship with the Product.</p>
+<p>Answer: C</p>
+<h2 id="question-3">Question 3</h2>
+<p>Which of the following statements is true regarding the following code?</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">from</span> datetime <span class="hljs-keyword">import</span> datetime, time
+
+<span class="hljs-comment"># Create two time objects</span>
+time1 = time(<span class="hljs-number">9</span>, <span class="hljs-number">30</span>)  <span class="hljs-comment"># 9:30 AM</span>
+time2 = time(<span class="hljs-number">15</span>, <span class="hljs-number">0</span>)  <span class="hljs-comment"># 3:00 PM</span>
+
+
+
+</div></code></pre>
+<p>A. <code>time1</code> is less than <code>time2</code><br>
+B. <code>time1</code> is more than <code>time2</code></p>
+<p>Answer A</p>
+<h2 id="question-4">Question 4</h2>
+<p>What best describes class methods in Python?</p>
+<p>A. Class methods are methods that are called on an instance of a class.<br>
+B. Class methods are methods that are called on a class itself.</p>
+<p>Answer: B</p>
+<h2 id="question-5">Question 5</h2>
+<p>What is the output of the following code?</p>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Character</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, name, health)</span>:</span>
+        self.name = name  
+        self.health = health  
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_name</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> self.name
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_health</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> self.health
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">attack</span><span class="hljs-params">(self, damage)</span>:</span>
+        print(<span class="hljs-string">f"<span class="hljs-subst">{self.name}</span> is attacked and loses <span class="hljs-subst">{damage}</span> health."</span>)
+        self.health -= damage
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PlayerCharacter</span><span class="hljs-params">(Character)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, name, health, level)</span>:</span>
+        super().__init__(name, health)
+        self.level = level
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">attack</span><span class="hljs-params">(self, opponent)</span>:</span>
+        damage = self.level * <span class="hljs-number">5</span>
+        print(<span class="hljs-string">f"<span class="hljs-subst">{self.get_name()}</span> attacks <span class="hljs-subst">{opponent.get_name()}</span> for <span class="hljs-subst">{damage}</span> damage."</span>)
+        opponent.attack(damage)
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NonPlayerCharacter</span><span class="hljs-params">(Character)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, name, health, behavior)</span>:</span>
+        super().__init__(name, health)
+        self.behavior = behavior
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">interact</span><span class="hljs-params">(self, player)</span>:</span>
+        print(<span class="hljs-string">f"<span class="hljs-subst">{self.get_name()}</span> interacts with <span class="hljs-subst">{player.get_name()}</span>."</span>)
+        <span class="hljs-keyword">if</span> self.behavior == <span class="hljs-string">"friendly"</span>:
+            print(<span class="hljs-string">"They offer assistance."</span>)
+        <span class="hljs-keyword">else</span>:
+            print(<span class="hljs-string">"They attack!"</span>)
+
+<span class="hljs-comment"># Create player and non-player characters</span>
+player = PlayerCharacter(<span class="hljs-string">"Hero"</span>, <span class="hljs-number">100</span>, <span class="hljs-number">5</span>)
+npc1 = NonPlayerCharacter(<span class="hljs-string">"Villager"</span>, <span class="hljs-number">50</span>, <span class="hljs-string">"friendly"</span>)
+npc2 = NonPlayerCharacter(<span class="hljs-string">"Orc"</span>, <span class="hljs-number">80</span>, <span class="hljs-string">"aggressive"</span>)
+
+<span class="hljs-comment"># Interactions</span>
+npc1.interact(player)
+npc2.interact(player)
+player.attack(npc1)
+</div></code></pre>
+<p>A</p>
+<pre class="hljs"><code><div>Villager interacts with Hero. 
+They offer assistance. 
+Orc interacts with Hero. 
+They attack! 
+Hero attacks Orc for 25 damage. 
+Villager is attacked and loses 25 health.
+</div></code></pre>
+<p>B</p>
+<pre class="hljs"><code><div>Villager interacts with Hero. 
+They offer assistance. 
+Orc interacts with Hero. 
+They attack! 
+Hero attacks Villager for 25 damage. 
+Villager is attacked and loses 25 health.  
+</div></code></pre>
+<p>C</p>
+<pre class="hljs"><code><div>Hero attacks Villager for 25 damage. 
+Villager is attacked and loses 25 health. 
+Orc interacts with Hero. 
+They attack! 
+Hero is attacked and loses 40 health.  
+</div></code></pre>
+<p>D</p>
+<pre class="hljs"><code><div>Villager interacts with Hero. 
+They offer assistance. 
+Orc attacks Hero. 
+Hero is attacked and loses 40 health. 
+Hero attacks Villager for 25 damage. 
+Villager is attacked and loses 25 health.  
+</div></code></pre>
+<p>Answer: B</p>
+<h2 id="question-6">Question 6</h2>
+<p>The following code is best to demonstrate which of the following OOP principles?</p>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Animal</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, name)</span>:</span>
+        self.name = name
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">speak</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">pass</span>  
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dog</span><span class="hljs-params">(Animal)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">speak</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-string">f"<span class="hljs-subst">{self.name}</span> says Woof!"</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Cat</span><span class="hljs-params">(Animal)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">speak</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-string">f"<span class="hljs-subst">{self.name}</span> says Meow!"</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Duck</span><span class="hljs-params">(Animal)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">speak</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-string">f"<span class="hljs-subst">{self.name}</span> says Quack!"</span>
+
+dog = Dog(<span class="hljs-string">"Buddy"</span>)
+cat = Cat(<span class="hljs-string">"Whiskers"</span>)
+duck = Duck(<span class="hljs-string">"Daffy"</span>)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">animal_sound</span><span class="hljs-params">(animal)</span>:</span>
+    <span class="hljs-keyword">return</span> animal.speak()
+
+print(animal_sound(dog))   
+print(animal_sound(cat))   
+print(animal_sound(duck))  
+
+</div></code></pre>
+<p>A. Information Hiding
+B. Polymorphism<br>
+C. Encapsulation<br>
+D. Abstraction</p>
+<p>Answer: B</p>
+<h2 id="question-7">Question 7</h2>
+<p>What is the output of the following code?</p>
+<pre class="hljs"><code><div>students = [
+    {<span class="hljs-string">"name"</span>: <span class="hljs-string">"Alice"</span>, <span class="hljs-string">"grades"</span>: [<span class="hljs-number">90</span>, <span class="hljs-number">85</span>, <span class="hljs-number">88</span>]},
+    {<span class="hljs-string">"name"</span>: <span class="hljs-string">"Bob"</span>, <span class="hljs-string">"grades"</span>: [<span class="hljs-number">78</span>, <span class="hljs-number">92</span>, <span class="hljs-number">87</span>]},
+]
+
+bob_grades = students[<span class="hljs-number">1</span>][<span class="hljs-string">"grades"</span>]
+bob_grades.append(<span class="hljs-number">95</span>)
+
+print(<span class="hljs-string">"All students' grades:"</span>, students)
+</div></code></pre>
+<p>A. All students' grades: [{'name': 'Alice', 'grades': [90, 85, 88]}, {'name': 'Bob', 'grades': [78, 92, 87]}]
+B. All students' grades: [{'name': 'Alice', 'grades': [90, 85, 88]}, {'name': 'Bob', 'grades': [78, 92, 87, 95]}]</p>
+<p>Answer: B</p>
+<h2 id="question-8">Question 8</h2>
+<p>What is the output of the following code?</p>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ShoppingCart</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, items)</span>:</span>
+        self.items = items  
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add_item</span><span class="hljs-params">(self, item)</span>:</span>
+        self.items.append(item)  
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">view_cart</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> self.items
+
+items = [<span class="hljs-string">"apple"</span>, <span class="hljs-string">"banana"</span>, <span class="hljs-string">"cherry"</span>]
+cart = ShoppingCart(items)
+
+
+items.append(<span class="hljs-string">"grapes"</span>)
+
+print(cart.view_cart())  
+</div></code></pre>
+<p>A. ['apple', 'banana', 'cherry']
+B. ['apple', 'banana', 'cherry', 'grapes']
+C. ['apple', 'banana', 'cherry', 'grapes', 'grapes']</p>
+<p>Answer: B</p>
+<h2 id="question-9">Question 9</h2>
+<p>What is output of the following code?</p>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span>
+        print(<span class="hljs-string">"Initializing A"</span>)
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">B</span><span class="hljs-params">(A)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span>
+        super().__init__()
+        print(<span class="hljs-string">"Initializing B"</span>)
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">C</span><span class="hljs-params">(A)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span>
+        super().__init__()
+        print(<span class="hljs-string">"Initializing C"</span>)
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">D</span><span class="hljs-params">(B, C)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span>
+        super().__init__()
+        print(<span class="hljs-string">"Initializing D"</span>)
+
+d = D()
+</div></code></pre>
+<p>A</p>
+<pre class="hljs"><code><div>Initializing A
+Initializing B
+Initializing C
+Initializing D
+</div></code></pre>
+<p>B</p>
+<pre class="hljs"><code><div>Initializing D
+Initializing C
+Initializing B
+Initializing A
+</div></code></pre>
+<p>C</p>
+<pre class="hljs"><code><div>Initializing A
+Initializing C
+Initializing B
+Initializing D
+</div></code></pre>
+<p>D</p>
+<pre class="hljs"><code><div>Initializing D
+Initializing B
+Initializing C
+Initializing A
+</div></code></pre>
+<p>Answer: C</p>
+<h2 id="question-10">Question 10</h2>
+<p>What is the output of the following code?</p>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, name, age)</span>:</span>
+        self.name = name
+        self.age = age
+
+person1 = Person(<span class="hljs-string">"Alice"</span>, <span class="hljs-number">30</span>)
+person2 = Person(<span class="hljs-string">"Alice"</span>, <span class="hljs-number">30</span>)
+
+equality = person1 == person2
+<span class="hljs-keyword">print</span> (equality)
+
+person3 = person1
+person1.name = <span class="hljs-string">"Bob"</span>
+print( person3.name)  
+</div></code></pre>
+<p>A</p>
+<pre class="hljs"><code><div>False
+Alice
+</div></code></pre>
+<p>B</p>
+<pre class="hljs"><code><div>True
+Alice
+</div></code></pre>
+<p>C</p>
+<pre class="hljs"><code><div>True
+Bob
+</div></code></pre>
+<p>D</p>
+<pre class="hljs"><code><div>False
+Bob
+</div></code></pre>
+<p>Answer: D</p>
+<h2 id="question-11">Question 11</h2>
+<p>Which of the following ways of using the class will result in an error?</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> random
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RandomNumberSequence</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, length, min_value, max_value)</span>:</span>
+        self.length = length
+        self.min_value = min_value
+        self.max_value = max_value
+        self.numbers = [random.randint(min_value, max_value)
+                        <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> range(length)]
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__len__</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> self.length
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__setitem__</span><span class="hljs-params">(self, index, value)</span>:</span>
+        <span class="hljs-keyword">if</span> index &lt; <span class="hljs-number">0</span> <span class="hljs-keyword">or</span> index &gt;= self.length:
+            <span class="hljs-keyword">raise</span> IndexError(<span class="hljs-string">"Index out of range."</span>)
+        self.numbers[index] = value
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__contains__</span><span class="hljs-params">(self, value)</span>:</span>
+        <span class="hljs-keyword">return</span> value <span class="hljs-keyword">in</span> self.numbers
+
+        
+random_sequence = RandomNumberSequence(<span class="hljs-number">10</span>, <span class="hljs-number">0</span>, <span class="hljs-number">100</span>)
+</div></code></pre>
+<!-- A   -->
+<!-- 
+```python
+print(random_sequence[5])
+``` -->
+<!-- B   -->
+<!-- ```python
+for number in random_sequence:
+    print(number, end=", ")
+``` -->
+<!-- C   -->
+<!-- ```python
+if value_to_check in random_sequence:
+    print(f"{value_to_check} is in the sequence.")
+else:
+    print(f"{value_to_check} is not in the sequence.")
+``` -->
+<!-- D   -->
+<!-- 
+```python
+random_sequence[0] = 5
+``` -->
+<p>A</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">for</span> number <span class="hljs-keyword">in</span> random_sequence:
+    print(number, end=<span class="hljs-string">", "</span>)
+</div></code></pre>
+<p>B</p>
+<pre class="hljs"><code><div>random_sequence[<span class="hljs-number">5</span>] = <span class="hljs-number">3</span>
+</div></code></pre>
+<p>C</p>
+<pre class="hljs"><code><div>value_to_check = <span class="hljs-number">50</span>
+
+<span class="hljs-keyword">if</span> value_to_check <span class="hljs-keyword">in</span> random_sequence:
+    print(<span class="hljs-string">f"<span class="hljs-subst">{value_to_check}</span> is in the sequence."</span>)
+<span class="hljs-keyword">else</span>:
+    print(<span class="hljs-string">f"<span class="hljs-subst">{value_to_check}</span> is not in the sequence."</span>)
+</div></code></pre>
+<p>D</p>
+<pre class="hljs"><code><div>print(<span class="hljs-string">"Length:"</span>, len(random_sequence))
+</div></code></pre>
+<p>Answer: A</p>
+<h2 id="question-12">Question 12</h2>
+<p>Which of the following statements is true regarding the following code?</p>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Order</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, total_amount)</span>:</span>
+        self.total_amount = total_amount
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">process_payment</span><span class="hljs-params">(self, payment_method)</span>:</span>
+        <span class="hljs-keyword">if</span> payment_method == <span class="hljs-string">"credit_card"</span>:
+            print(<span class="hljs-string">"Processing credit card payment..."</span>)
+        <span class="hljs-keyword">elif</span> payment_method == <span class="hljs-string">"paypal"</span>:
+            print(<span class="hljs-string">"Processing PayPal payment..."</span>)
+        <span class="hljs-keyword">elif</span> payment_method == <span class="hljs-string">"bitcoin"</span>:
+            print(<span class="hljs-string">"Processing Bitcoin payment..."</span>)
+        <span class="hljs-keyword">else</span>:
+            print(<span class="hljs-string">"Invalid payment method"</span>)
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Payment</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">make_payment</span><span class="hljs-params">(self, amount, payment_method)</span>:</span>
+        <span class="hljs-keyword">if</span> payment_method == <span class="hljs-string">"credit_card"</span>:
+            print(<span class="hljs-string">f"Processing credit card payment of $<span class="hljs-subst">{amount}</span>..."</span>)
+        <span class="hljs-keyword">elif</span> payment_method == <span class="hljs-string">"paypal"</span>:
+            print(<span class="hljs-string">f"Processing PayPal payment of $<span class="hljs-subst">{amount}</span>..."</span>)
+        <span class="hljs-keyword">elif</span> payment_method == <span class="hljs-string">"bitcoin"</span>:
+            print(<span class="hljs-string">f"Processing Bitcoin payment of $<span class="hljs-subst">{amount}</span>..."</span>)
+        <span class="hljs-keyword">else</span>:
+            print(<span class="hljs-string">"Invalid payment method"</span>)
+
+<span class="hljs-comment"># Client code</span>
+order = Order(<span class="hljs-number">100.0</span>)
+order.process_payment(<span class="hljs-string">"credit_card"</span>)
+
+payment = Payment()
+payment.make_payment(<span class="hljs-number">100.0</span>, <span class="hljs-string">"paypal"</span>)
+
+</div></code></pre>
+<p>A. The code violates the Single Responsibility Principle.
+B. The code violates the Open/Closed Principle.
+C. The code violates the Liskov Substitution Principle.
+D. The code violates the Interface Segregation Principle.</p>
+<p>Answer: B</p>
+<h2 id="question-13">Question 13</h2>
+<p>The transition from the following code to the code that follows it best demonstrates which of the following OOP principles?</p>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LightBulb</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">turn_on</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-comment"># Code to turn on the light bulb.</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">turn_off</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-comment"># Code to turn off the light bulb.</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LightSwitch</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, bulb)</span>:</span>
+        self.bulb = bulb
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">flip_up</span><span class="hljs-params">(self)</span>:</span>
+        self.bulb.turn_on()
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">flip_down</span><span class="hljs-params">(self)</span>:</span>
+        self.bulb.turn_off()
+
+<span class="hljs-comment"># Usage</span>
+bulb = LightBulb()
+switch = LightSwitch(bulb)
+switch.flip_up()
+
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-keyword">from</span> abc <span class="hljs-keyword">import</span> ABC, abstractmethod
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Switchable</span><span class="hljs-params">(ABC)</span>:</span>
+<span class="hljs-meta">    @abstractmethod</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">turn_on</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">pass</span>
+
+<span class="hljs-meta">    @abstractmethod</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">turn_off</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">pass</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LightBulb</span><span class="hljs-params">(Switchable)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">turn_on</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-comment"># Code to turn on the light bulb.</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">turn_off</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-comment"># Code to turn off the light bulb.</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Fan</span><span class="hljs-params">(Switchable)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">turn_on</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-comment"># Code to turn on the fan.</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">turn_off</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-comment"># Code to turn off the fan.</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LightSwitch</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, device)</span>:</span>
+        self.device = device
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">flip_up</span><span class="hljs-params">(self)</span>:</span>
+        self.device.turn_on()
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">flip_down</span><span class="hljs-params">(self)</span>:</span>
+        self.device.turn_off()
+
+<span class="hljs-comment"># Usage</span>
+bulb = LightBulb()
+fan = Fan()
+switch = LightSwitch(bulb)
+switch.flip_up()
+</div></code></pre>
+<p>A. Single Responsibility Principle
+B. Demeter's Law
+C. Interface Segregation Principle
+D. Dependency Inversion Principle</p>
+<p>Answer: D</p>
+<h2 id="question-14">Question 14</h2>
+<p>Based on the code below, all the following options can fill the code placeholder to extract a slice of 'person1' and 'person3' data as a new dictionary except _______?</p>
+<pre class="hljs"><code><div>data = {
+    <span class="hljs-string">'person1'</span>: {
+        <span class="hljs-string">'name'</span>: <span class="hljs-string">'Alice'</span>,
+        <span class="hljs-string">'age'</span>: <span class="hljs-number">28</span>,
+        <span class="hljs-string">'address'</span>: <span class="hljs-string">'123 Main St'</span>,
+    },
+    <span class="hljs-string">'person2'</span>: {
+        <span class="hljs-string">'name'</span>: <span class="hljs-string">'Bob'</span>,
+        <span class="hljs-string">'age'</span>: <span class="hljs-number">35</span>,
+        <span class="hljs-string">'address'</span>: <span class="hljs-string">'456 Elm St'</span>,
+    },
+    <span class="hljs-string">'person3'</span>: {
+        <span class="hljs-string">'name'</span>: <span class="hljs-string">'Carol'</span>,
+        <span class="hljs-string">'age'</span>: <span class="hljs-number">42</span>,
+        <span class="hljs-string">'address'</span>: <span class="hljs-string">'789 Oak St'</span>,
+    },
+}
+
+<span class="hljs-comment"># Extract the address of 'person2'</span>
+address_person2 = data[<span class="hljs-string">'person2'</span>][<span class="hljs-string">'address'</span>]
+
+<span class="hljs-comment"># Extract a slice of 'person1' and 'person3' data as a new dictionary</span>
+<span class="hljs-comment"># selected_people = /* Your code here */</span>
+
+<span class="hljs-comment"># Print the results</span>
+print(<span class="hljs-string">"Address of person2:"</span>, address_person2)
+print(<span class="hljs-string">"Selected People:"</span>)
+<span class="hljs-keyword">for</span> person, info <span class="hljs-keyword">in</span> selected_people.items():
+    print(person, info)
+
+</div></code></pre>
+<p>A</p>
+<pre class="hljs"><code><div>selected_people = {k: v <span class="hljs-keyword">for</span> k, v <span class="hljs-keyword">in</span> data.items() <span class="hljs-keyword">if</span> k == <span class="hljs-string">'person1'</span> <span class="hljs-keyword">or</span> k == <span class="hljs-string">'person3'</span>}
+</div></code></pre>
+<p>B</p>
+<pre class="hljs"><code><div>selected_people = {k: v <span class="hljs-keyword">for</span> k, v <span class="hljs-keyword">in</span> data.items() <span class="hljs-keyword">if</span> k == <span class="hljs-string">'person1'</span>} <span class="hljs-keyword">or</span> {k: v <span class="hljs-keyword">for</span> k, v <span class="hljs-keyword">in</span> data.items() <span class="hljs-keyword">if</span> k == <span class="hljs-string">'person3'</span>}
+</div></code></pre>
+<p>C</p>
+<pre class="hljs"><code><div>selected_people = {k: v <span class="hljs-keyword">for</span> k, v <span class="hljs-keyword">in</span> data.items() <span class="hljs-keyword">if</span> k <span class="hljs-keyword">in</span> (<span class="hljs-string">'person1'</span>, <span class="hljs-string">'person3'</span>)}
+
+</div></code></pre>
+<p>D</p>
+<pre class="hljs"><code><div>selected_people = {}
+<span class="hljs-keyword">for</span> k, v <span class="hljs-keyword">in</span> data.items():
+    <span class="hljs-keyword">if</span> k == <span class="hljs-string">'person1'</span> <span class="hljs-keyword">or</span> k == <span class="hljs-string">'person3'</span>:
+        selected_people[k] = v
+</div></code></pre>
+<p>Answer: B</p>
+<h2 id="question-15">Question 15</h2>
+<p>What is the output of the following code</p>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">show</span><span class="hljs-params">(self)</span>:</span>
+        print(<span class="hljs-string">"A"</span>)
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">B</span><span class="hljs-params">(A)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">show</span><span class="hljs-params">(self)</span>:</span>
+        print(<span class="hljs-string">"B"</span>)
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">C</span><span class="hljs-params">(A)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">show</span><span class="hljs-params">(self)</span>:</span>
+        print(<span class="hljs-string">"C"</span>)
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">D</span><span class="hljs-params">(B, C)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">show</span><span class="hljs-params">(self)</span>:</span>
+        print(<span class="hljs-string">"D"</span>)
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">E</span><span class="hljs-params">(C)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">show</span><span class="hljs-params">(self)</span>:</span>
+        print(<span class="hljs-string">"E"</span>)
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">F</span><span class="hljs-params">(D, E)</span>:</span>
+    <span class="hljs-keyword">pass</span>
+
+obj = F()
+print(F.mro())
+</div></code></pre>
+<p>A</p>
+<pre class="hljs"><code><div>TypeError: Cannot create a consistent method resolution order (MRO) for bases
+</div></code></pre>
+<p>B</p>
+<pre class="hljs"><code><div>[&lt;class '__main__.F'&gt;, &lt;class '__main__.D'&gt;, &lt;class '__main__.B'&gt;, &lt;class '__main__.E'&gt;, &lt;class '__main__.C'&gt;, &lt;class '__main__.A'&gt;, &lt;class 'object'&gt;]
+</div></code></pre>
+<p>Answer: B</p>
+<h2 id="question-16">Question 16</h2>
+<p>What is the output of the following code?</p>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">InsufficientFundsError</span><span class="hljs-params">(Exception)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, amount, balance)</span>:</span>
+        self.amount = amount
+        self.balance = balance
+        super().__init__(<span class="hljs-string">f"Insufficient funds: You have $<span class="hljs-subst">{balance}</span>, but you requested $<span class="hljs-subst">{amount}</span>."</span>)
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Account</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, account_number, balance)</span>:</span>
+        self.account_number = account_number
+        self.balance = balance
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">deposit</span><span class="hljs-params">(self, amount)</span>:</span>
+        <span class="hljs-keyword">if</span> amount &lt; <span class="hljs-number">0</span>:
+            <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">"Invalid deposit amount. Amount must be greater than or equal to 0."</span>)
+        self.balance += amount
+        <span class="hljs-keyword">return</span> self.balance
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">withdraw</span><span class="hljs-params">(self, amount)</span>:</span>
+        <span class="hljs-keyword">if</span> amount &lt; <span class="hljs-number">0</span>:
+            <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">"Invalid withdrawal amount. Amount must be greater than or equal to 0."</span>)
+        <span class="hljs-keyword">if</span> amount &gt; self.balance:
+            <span class="hljs-keyword">raise</span> InsufficientFundsError(amount, self.balance)
+        self.balance -= amount
+        <span class="hljs-keyword">return</span> self.balance
+
+<span class="hljs-comment"># Example usage</span>
+account1 = Account(<span class="hljs-string">"123456"</span>, <span class="hljs-number">1000</span>)
+
+<span class="hljs-keyword">try</span>:
+    deposit_amount = <span class="hljs-number">-200</span>
+    account1.deposit(deposit_amount)
+<span class="hljs-keyword">except</span> ValueError <span class="hljs-keyword">as</span> ve:
+    print(<span class="hljs-string">f"Deposit error: <span class="hljs-subst">{ve}</span>"</span>)
+
+<span class="hljs-keyword">try</span>:
+    withdrawal_amount = <span class="hljs-number">1500</span>
+    account1.withdraw(withdrawal_amount)
+<span class="hljs-keyword">except</span> InsufficientFundsError <span class="hljs-keyword">as</span> ife:
+    print(ife)
+<span class="hljs-keyword">except</span> ValueError <span class="hljs-keyword">as</span> ve:
+    print(<span class="hljs-string">f"Withdrawal error: <span class="hljs-subst">{ve}</span>"</span>)
+
+<span class="hljs-keyword">try</span>:
+    withdrawal_amount = <span class="hljs-number">-100</span>
+    account1.withdraw(withdrawal_amount)
+<span class="hljs-keyword">except</span> ValueError <span class="hljs-keyword">as</span> ve:
+    print(<span class="hljs-string">f"Withdrawal error: <span class="hljs-subst">{ve}</span>"</span>)
+
+print(<span class="hljs-string">f"Account balance: $<span class="hljs-subst">{account1.balance}</span>"</span>)
+</div></code></pre>
+<p>A</p>
+<pre class="hljs"><code><div>Insufficient funds: You have $1200, but you requested $1500.
+Withdrawal error: Invalid withdrawal amount. Amount must be greater than or equal to 0.
+Account balance: $1200
+</div></code></pre>
+<p>B</p>
+<pre class="hljs"><code><div>Deposit error: Invalid deposit amount. Amount must be greater than or equal to 0.
+Insufficient funds: You have $1000, but you requested $1500.
+Account balance: $900
+</div></code></pre>
+<p>C</p>
+<pre class="hljs"><code><div>Deposit error: Invalid deposit amount. Amount must be greater than or equal to 0.
+Insufficient funds: You have $1000, but you requested $1500.
+Withdrawal error: Invalid withdrawal amount. Amount must be greater than or equal to 0.
+Account balance: $1000
+</div></code></pre>
+<p>Answer: C</p>
+<h2 id="question-17">Question 17</h2>
+<p>For the <code>Account</code> class in the previous question 16, which of the following unit tests is not properly testing the class?</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> unittest
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestAccount</span><span class="hljs-params">(unittest.TestCase)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">setUp</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-comment"># Create an account with an initial balance of $1000 for testing</span>
+        self.account = Account(<span class="hljs-string">"123456"</span>, <span class="hljs-number">1000</span>)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_deposit_valid_amount</span><span class="hljs-params">(self)</span>:</span>
+        new_balance = self.account.deposit(<span class="hljs-number">200</span>)
+        self.assertEqual(new_balance, <span class="hljs-number">1200</span>)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_deposit_invalid_amount</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">with</span> self.assertRaises(ValueError):
+            self.account.deposit(<span class="hljs-number">-200</span>)
+            
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_withdraw_valid_amount</span><span class="hljs-params">(self)</span>:</span>
+        new_balance = self.account.withdraw(<span class="hljs-number">500</span>)
+        self.assertEqual(new_balance, <span class="hljs-number">500</span>)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_withdraw_insufficient_funds</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">with</span> self.assertRaises(ValueError) <span class="hljs-keyword">as</span> context:
+            self.account.withdraw(<span class="hljs-number">1500</span>)
+        self.assertEqual(str(context.exception), <span class="hljs-string">"Insufficient funds: You have $1000, but you requested $1500."</span>)
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_withdraw_invalid_amount</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">with</span> self.assertRaises(ValueError):
+            self.account.withdraw(<span class="hljs-number">-100</span>)
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">"__main__"</span>:
+    unittest.main()
+</div></code></pre>
+<p>A. <code>test_deposit_valid_amount</code><br>
+B. <code>test_deposit_invalid_amount</code><br>
+C. <code>test_withdraw_insufficient_funds</code><br>
+D. <code>test_withdraw_valid_amount</code></p>
+<p>Answer: C. <code>test_withdraw_insufficient_funds</code>
+it should be
+with self.assertRaises(InsufficientFundsError) as context:</p>
+<h2 id="question-18">Question 18</h2>
+<p>For the following file and code, what info does the code compute and store?</p>
+<p><code>json_log_file.json</code> File</p>
+<pre class="hljs"><code><div>{<span class="hljs-attr">"timestamp"</span>: <span class="hljs-string">"2023-10-22T12:34:56"</span>, <span class="hljs-attr">"level"</span>: <span class="hljs-string">"info"</span>, <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Application started"</span>},
+{<span class="hljs-attr">"timestamp"</span>: <span class="hljs-string">"2023-10-22T12:35:12"</span>, <span class="hljs-attr">"level"</span>: <span class="hljs-string">"warning"</span>, <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Warning: Disk space low"</span>},
+{<span class="hljs-attr">"timestamp"</span>: <span class="hljs-string">"2023-10-22T12:36:45"</span>, <span class="hljs-attr">"level"</span>: <span class="hljs-string">"error"</span>, <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Critical error: Application crashed"</span>},
+{<span class="hljs-attr">"timestamp"</span>: <span class="hljs-string">"2023-10-22T12:37:28"</span>, <span class="hljs-attr">"level"</span>: <span class="hljs-string">"info"</span>, <span class="hljs-attr">"message"</span>: <span class="hljs-string">"User logged in"</span>},
+{<span class="hljs-attr">"timestamp"</span>: <span class="hljs-string">"2023-10-22T12:38:09"</span>, <span class="hljs-attr">"level"</span>: <span class="hljs-string">"error"</span>, <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Database connection failed"</span>},
+{<span class="hljs-attr">"timestamp"</span>: <span class="hljs-string">"2023-10-22T12:38:56"</span>, <span class="hljs-attr">"level"</span>: <span class="hljs-string">"warning"</span>, <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Warning: High CPU usage"</span>},
+{<span class="hljs-attr">"timestamp"</span>: <span class="hljs-string">"2023-10-22T12:39:21"</span>, <span class="hljs-attr">"level"</span>: <span class="hljs-string">"info"</span>, <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Application shutdown"</span>}
+
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> json
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">analyze_json_log</span><span class="hljs-params">(log_file)</span>:</span>
+    <span class="hljs-keyword">try</span>:
+        <span class="hljs-keyword">with</span> open(log_file, <span class="hljs-string">"r"</span>) <span class="hljs-keyword">as</span> file:
+            log_entries = [json.loads(line) <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> file <span class="hljs-keyword">if</span> line.strip()]  <span class="hljs-comment"># Load JSON from each line</span>
+
+            total_entries = len(log_entries)
+            error_count = <span class="hljs-number">0</span>
+            warning_count = <span class="hljs-number">0</span>
+            info_count = <span class="hljs-number">0</span>
+
+            log_level_counts = {<span class="hljs-string">"error"</span>: <span class="hljs-number">0</span>, <span class="hljs-string">"warning"</span>: <span class="hljs-number">0</span>}
+
+            <span class="hljs-keyword">for</span> entry <span class="hljs-keyword">in</span> log_entries:
+                level = entry.get(<span class="hljs-string">'level'</span>, <span class="hljs-string">''</span>).lower()
+                <span class="hljs-keyword">if</span> level <span class="hljs-keyword">in</span> log_level_counts:
+                    log_level_counts[level] += <span class="hljs-number">1</span>
+            <span class="hljs-keyword">return</span> total_entries, error_count, warning_count, info_count
+    <span class="hljs-keyword">except</span> FileNotFoundError:
+        print(<span class="hljs-string">f"The log file '<span class="hljs-subst">{log_file}</span>' does not exist."</span>)
+
+
+log_file_path = <span class="hljs-string">"json_log_file.json"</span>
+
+analyze_json_log(log_file_path)
+
+
+</div></code></pre>
+<p>A. The total number of log entries, the number of errors, and the number of warnings.<br>
+B. The total number of log entries, the number of errors, the number of warnings, and the number of info messages.<br>
+C. the number of errors, the number of warnings, and the number of info messages.<br>
+D. the number of errors, the number of warnings.</p>
+<p>Answer: A</p>
+<h2 id="question-19">Question 19</h2>
+<p>What is the output of the following code?</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">from</span> enum <span class="hljs-keyword">import</span> Enum, auto
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DayOfWeek</span><span class="hljs-params">(Enum)</span>:</span>
+    MONDAY = auto()
+    TUESDAY = auto()
+    WEDNESDAY = auto()
+    THURSDAY = auto()
+    FRIDAY = auto()
+    SATURDAY = auto()
+    SUNDAY = auto()
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RecurringEvent</span><span class="hljs-params">(Enum)</span>:</span>
+    GYM = DayOfWeek.MONDAY
+    MEETING = DayOfWeek.WEDNESDAY
+    CODING = DayOfWeek.TUESDAY
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, day)</span>:</span>
+        self.day = day
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">next_event_day</span><span class="hljs-params">(self, current_day)</span>:</span>
+        days_until_event = (self.day.value - current_day.value) % <span class="hljs-number">7</span>
+        <span class="hljs-keyword">if</span> days_until_event == <span class="hljs-number">0</span>:
+            <span class="hljs-keyword">return</span> <span class="hljs-string">"Today"</span>
+        <span class="hljs-keyword">return</span> DayOfWeek((current_day.value + days_until_event) % <span class="hljs-number">7</span>)
+
+
+<span class="hljs-comment"># Simulate scheduling recurring events</span>
+current_day = DayOfWeek.TUESDAY
+<span class="hljs-keyword">for</span> event <span class="hljs-keyword">in</span> RecurringEvent:
+    next_event_day = event.next_event_day(current_day)
+    print(<span class="hljs-string">f"Next '<span class="hljs-subst">{event.name}</span>' event: <span class="hljs-subst">{next_event_day <span class="hljs-keyword">or</span> next_event_day.name}</span> "</span>)
+</div></code></pre>
+<p>A</p>
+<pre class="hljs"><code><div>Next 'GYM' event: MONDAY 
+Next 'MEETING' event: WEDNESDAY
+</div></code></pre>
+<p>B</p>
+<pre class="hljs"><code><div>Next 'MEETING' event: WEDNESDAY
+Next 'GYM' event: MONDAY 
+</div></code></pre>
+<p>C</p>
+<pre class="hljs"><code><div>Next 'GYM' event: DayOfWeek.MONDAY 
+Next 'MEETING' event: DayOfWeek.WEDNESDAY
+Next 'CODING' event: Today
+</div></code></pre>
+<p>D</p>
+<pre class="hljs"><code><div>Next 'GYM' event: DayOfWeek.MONDAY 
+Next 'MEETING' event: DayOfWeek.WEDNESDAY
+Next 'CODING' event: DayOfWeek.TUESDAY
+</div></code></pre>
+<p>Answer: C</p>
+<h2 id="question-20">Question 20</h2>
+<p>What is the output of the following code?</p>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyCustomIterator</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span>
+        self.data = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]
+        self.index = <span class="hljs-number">0</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__iter__</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> self
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__next__</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">if</span> self.index &lt; len(self.data):
+            result = self.data[self.index]
+            self.index += <span class="hljs-number">1</span>
+            <span class="hljs-keyword">return</span> result
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span>
+
+custom_iterator = MyCustomIterator()
+
+print(next(custom_iterator))
+print(next(custom_iterator))
+print(next(custom_iterator))
+print(next(custom_iterator))
+print(next(custom_iterator))
+
+
+</div></code></pre>
+<p>A. The elements of the list [1, 2, 3] will be printed, followed by a <code>None</code> value, followed by a <code>None</code> value.
+B. The elements of the list [1, 2, 3] will be printed, followed by a <code>StopIteration</code> exception.
+C. The elements of the list [1, 2, 3] will be printed, followed by a <code>None</code> value.
+D. The elements of the list [1, 2, 3] will be printed, followed by a <code>None</code> value, followed by a <code>StopIteration</code> exception.</p>
+<p>Answer: A</p>
+<h2 id="question-21">Question 21</h2>
+<p>For the following code, which of the following statements is true?</p>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NewsAgency</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span>
+        self._subscribers = []
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add_subscriber</span><span class="hljs-params">(self, subscriber)</span>:</span>
+        self._subscribers.append(subscriber)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">remove_subscriber</span><span class="hljs-params">(self, subscriber)</span>:</span>
+        self._subscribers.remove(subscriber)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">update_news</span><span class="hljs-params">(self, news)</span>:</span>
+        self.news = news
+        self.notify_subscribers()
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">notify_subscribers</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">for</span> subscriber <span class="hljs-keyword">in</span> self._subscribers:
+            subscriber.update()
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NewsSubscriber</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, name, news_agency)</span>:</span>
+        self.name = name
+        self.news_agency = news_agency
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">update</span><span class="hljs-params">(self)</span>:</span>
+        print(<span class="hljs-string">f"<span class="hljs-subst">{self.name}</span> received the latest news: <span class="hljs-subst">{self.news_agency.news}</span>"</span>)
+
+<span class="hljs-comment"># Usage</span>
+news_agency = NewsAgency()
+
+subscriber1 = NewsSubscriber(<span class="hljs-string">"Subscriber 1"</span>, news_agency)
+subscriber2 = NewsSubscriber(<span class="hljs-string">"Subscriber 2"</span>, news_agency)
+
+news_agency.add_subscriber(subscriber1)
+news_agency.add_subscriber(subscriber2)
+
+news_agency.update_news(<span class="hljs-string">"Breaking News: New Technology Advancements"</span>)
+
+</div></code></pre>
+<p>A. The NewsAgency class is not properly decoupled from the NewsSubscriber class because it depends on the subscriber.update() method.
+B. The NewsSubscriber class is not properly decoupled from the NewsAgency class because it depends on the news_agency.news variable.</p>
+<p>Answer: B</p>
+<h2 id="question-22">Question 22</h2>
+<p>What is the output of the following code?</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_generator</span><span class="hljs-params">()</span>:</span>
+    n = <span class="hljs-number">1</span>
+    <span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:
+        <span class="hljs-keyword">yield</span> n * n
+        print(n)
+        n += <span class="hljs-number">1</span>
+
+<span class="hljs-comment"># Create a generator object</span>
+_iterator = _generator()
+
+<span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> range(<span class="hljs-number">3</span>):
+    print(next(_iterator))
+</div></code></pre>
+<p>A</p>
+<pre class="hljs"><code><div>1
+4
+9
+</div></code></pre>
+<p>B</p>
+<pre class="hljs"><code><div>1
+1
+4
+2
+9
+</div></code></pre>
+<p>C</p>
+<pre class="hljs"><code><div>1
+1
+4
+4
+9
+</div></code></pre>
+<p>D</p>
+<pre class="hljs"><code><div>1
+4
+9
+9
+</div></code></pre>
+<p>Answer: B</p>
+<h2 id="question-23">Question 23</h2>
+<p>What is the output of the following code?</p>
+<pre class="hljs"><code><div><span class="hljs-comment"># List of strings</span>
+words = [<span class="hljs-string">"apple"</span>, <span class="hljs-string">"banana"</span>, <span class="hljs-string">"cherry"</span>, <span class="hljs-string">"date"</span>, <span class="hljs-string">"elderberry"</span>, <span class="hljs-string">"fig"</span>, <span class="hljs-string">"grape"</span>]
+
+<span class="hljs-comment"># Use filter() to keep only words with more than 5 characters</span>
+filtered_words = list(filter(<span class="hljs-keyword">lambda</span> word: len(word) &gt; <span class="hljs-number">5</span>, words))
+
+<span class="hljs-comment"># Use map() to transform the filtered words to uppercase</span>
+result = list(map(<span class="hljs-keyword">lambda</span> word: word.upper(), filtered_words))
+
+print( result)
+</div></code></pre>
+<p>A. [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;, &quot;date&quot;, &quot;elderberry&quot;, &quot;fig&quot;, &quot;grape&quot;]<br>
+B. ['APPLE', 'BANANA', 'CHERRY', 'ELDERBERRY', 'GRAPE']<br>
+C. ['ELDERBERRY']<br>
+D. ['BANANA', 'CHERRY', 'ELDERBERRY']</p>
+<p>Answer: D</p>
+<h2 id="question-24">Question 24</h2>
+<p>For the following <em>cProfile</em> output, which of the following statements is true?</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> time
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">slow_function</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> range(<span class="hljs-number">1000000</span>):
+        _ = <span class="hljs-string">"This is a slow function"</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fast_function</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> range(<span class="hljs-number">100000</span>):
+        _ = <span class="hljs-string">"This is a fast function"</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">function_calls_subfunctions</span><span class="hljs-params">()</span>:</span>
+    slow_function()
+    fast_function()
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>:</span>
+    slow_function()
+    slow_function()
+    fast_function()
+    function_calls_subfunctions()
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">"__main__"</span>:
+    main()
+
+</div></code></pre>
+<p>Output</p>
+<pre class="hljs"><code><div>         10 function calls in 0.096 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.096    0.096 {built-in method builtins.exec}
+        1    0.000    0.000    0.096    0.096 test.py:1(&lt;module&gt;)
+        1    0.000    0.000    0.096    0.096 test.py:15(main)
+        3    0.090    0.030    0.090    0.030 test.py:3(slow_function)
+        1    0.000    0.000    0.034    0.034 test.py:11(function_calls_subfunctions)
+        2    0.006    0.003    0.006    0.003 test.py:7(fast_function)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+</div></code></pre>
+<p>A. <code>function_calls_subfunctions</code> takes 0.000 time to execute.
+B. <code>slow_function()</code> is faster than <code>fast_function()</code>
+C. Total execution time for the program is 0.096 seconds:
+D. The total functions call in the program is 10.</p>
+<p>Answer: C or D or none of the options with a valid explanation.
+To be discussed.</p>
+<h2 id="question-25">Question 25</h2>
+<p>What is thee output of the following code?</p>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Root</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">f</span><span class="hljs-params">(self)</span>:</span>
+        print(<span class="hljs-string">"Root.f()"</span>)
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span><span class="hljs-params">(Root)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">f</span><span class="hljs-params">(self)</span>:</span>
+        print(<span class="hljs-string">"A.f()"</span>)
+        super().f()
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">B</span><span class="hljs-params">(Root)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">f</span><span class="hljs-params">(self)</span>:</span>
+        print(<span class="hljs-string">"B.f()"</span>)
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">C</span><span class="hljs-params">(A, B)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">f</span><span class="hljs-params">(self)</span>:</span>
+        print(<span class="hljs-string">"C.f()"</span>)
+        super().f()
+
+c = C()
+c.f()
+</div></code></pre>
+<p>A</p>
+<pre class="hljs"><code><div>C.f()
+B.f()
+A.f()
+Root.f()
+</div></code></pre>
+<p>B</p>
+<pre class="hljs"><code><div>C.f()
+A.f()
+Root.f()
+</div></code></pre>
+<p>C</p>
+<pre class="hljs"><code><div>C.f()
+A.f()
+B.f()
+Root.f()
+</div></code></pre>
+<p>D</p>
+<pre class="hljs"><code><div>C.f()
+A.f()
+B.f()
+</div></code></pre>
+<p>Answer D</p>
+<h2 id="question-26">Question 26</h2>
+<p>Which of the following computations is proper for the linearization of the following class hierarchy?</p>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">X</span>:</span><span class="hljs-keyword">pass</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Y</span>:</span><span class="hljs-keyword">pass</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Z</span>:</span><span class="hljs-keyword">pass</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span><span class="hljs-params">(X,Y)</span>:</span><span class="hljs-keyword">pass</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">B</span><span class="hljs-params">(Y,Z)</span>:</span><span class="hljs-keyword">pass</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">M</span><span class="hljs-params">(B,A,Z)</span>:</span><span class="hljs-keyword">pass</span>
+
+</div></code></pre>
+<!-- # print([cls.__name__ for cls in M.__mro__]) -->
+<p>A</p>
+<pre class="hljs"><code><div>L(X) = [X]
+L(Y) = [Y] 
+L(Z) = [Z]
+L(A) = [X, Y]
+L(B) = [Y, Z]
+L(M) = [M, B, A, Z]
+L(M) = [M] + merge(L(B), L(A), L(Z), [B, A, Z]) 
+L(M) = [M] + merge([Y, Z], [X, Y], [Z], [B, A, Z])
+L(M) = [M, X] + merge([Y, Z], [A, Y], [Z], [B, A, Z])
+L(M) = [M, X, A] + merge([Y, Z], [Y], [Z], [B, Z])
+L(M) = [M, X, A, Y] + merge([Z], [], [Z], [B, Z])
+L(M) = [M, X, A, Y, Z] + merge([Z], [], [Z], [B, Z]) 
+L(M) = [M, X, A, Y, Z, B]
+</div></code></pre>
+<p>B</p>
+<pre class="hljs"><code><div>L(X) = [X]
+L(Y) = [Y] 
+L(Z) = [Z]
+L(A) = [A, X, Y]
+L(B) = [B, Y, Z]
+L(M) = [M, B, A, Z]
+L(M) = [M] + merge(L(B), L(A), L(Z), [B, A, Z]) 
+L(M) = [M] + merge([B, Y, Z], [A, X, Y], [Z], [B, A, Z])
+L(M) = [M, B] + merge([Y, Z], [A, X, Y], [Z], [A, Z])
+L(M) = [M, B, A] + merge([Y, Z], [X, Y], [Z], [Z])
+L(M) = [M, B, A, X] + merge([Y, Z], [Y], [Z], [Z])
+L(M) = [M, B, A, X, Y] + merge([Z], [], [Z], [Z]) 
+L(M) = [M, B, A, X, Y, Z] 
+</div></code></pre>
+<p>C</p>
+<pre class="hljs"><code><div>L(X) = [X]
+L(Y) = [Y] 
+L(Z) = [Z]
+L(A) = [A, X, Y]
+L(B) = [B, Y, Z]
+L(M) = [M, B, A, Z]
+L(M) = [M] + merge(L(B), L(A), L(Z)) 
+L(M) = [M] + merge([B, Y, Z], [A, X, Y], [Z])
+L(M) = [M, B] + merge([Y, Z], [A, X, Y], [Z])
+L(M) = [M, B, A] + merge([Y, Z], [X, Y], [Z])
+L(M) = [M, B, A, Y] + merge([Z], [X], [Z])
+L(M) = [M, B, A, Y, Z] + merge([], [X], []) 
+L(M) = [M, B, A, Y, Z, X] 
+</div></code></pre>
+<p>Answer B</p>
+
+</body>
+</html>
