@@ -1,0 +1,1259 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>exam_with_answers.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+<link rel="stylesheet" href="file:///c%3A/Courses/comp3522-f23/MidtermMockExam/style.css" type="text/css">
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h2 id="question-1">Question  1</h2>
+<p>What is the output of the following code</p>
+<pre class="hljs"><code><div>sentence = <span class="hljs-string">"BCIT's CST program empowers tech leaders."</span>
+
+words = sentence.split()
+
+uppercase_words = [word.upper() <span class="hljs-keyword">for</span> word <span class="hljs-keyword">in</span> words]
+
+new_sentence = <span class="hljs-string">" "</span>.join(uppercase_words)
+
+print(new_sentence)
+
+</div></code></pre>
+<p>A. Bcit's Cst Program Empowers Tech Leaders.<br>
+B. BCIT'S CST PROGRAM EMPOWERS TECH LEADERS.<br>
+C. bcit's cst program empowers tech leaders.<br>
+D. BCIT's CST Program Empowers Tech Leaders.</p>
+<p><strong>ANSWER</strong>: b
+<strong>ANSWER</strong></p>
+<h2 id="question-2">Question 2</h2>
+<p>Which of the following code snippets will display the following output</p>
+<pre class="hljs"><code><div>The square root of 25 is 5.00
+</div></code></pre>
+<hr>
+<p>A</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> math
+
+number = <span class="hljs-number">25</span>
+square_root = math.sqrt(number)
+
+formatted_result = <span class="hljs-string">"The square root of {} is {:.2}"</span>.format(number, square_root)
+
+print(formatted_result)
+
+</div></code></pre>
+<p>B</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> math
+
+number = <span class="hljs-number">25</span>
+square_root = math.sqrt(number)
+
+formatted_result = <span class="hljs-string">"The square root of {} is {:.4f}"</span>.format(number, square_root)
+
+print(formatted_result)
+
+
+</div></code></pre>
+<p>C</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> math
+
+number = <span class="hljs-number">25</span>
+square_root = math.sqrt(number)
+
+formatted_result = <span class="hljs-string">"The square root of {} is {:.2f}"</span>.format(number)
+
+print(formatted_result)
+
+
+</div></code></pre>
+<p>D</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> math
+
+number = <span class="hljs-number">25</span>
+square_root = math.sqrt(number)
+
+formatted_result = <span class="hljs-string">"The square root of {} is {:.2f}"</span>.format(number, square_root)
+
+print(formatted_result)
+</div></code></pre>
+<p><strong>ANSWER</strong>: d
+Feedback
+option a Incorrect Formatting
+option b Incorrect Decimal Places
+option c Missing Value
+<strong>ANSWER</strong></p>
+<h2 id="question-3">Question 3</h2>
+<p>How can I modify the student_scores tuple to add a new student's scores; <code>(&quot;Eve&quot;, 95, 90, 88)</code>?</p>
+<p>Before:</p>
+<pre class="hljs"><code><div>student_scores = (
+    (<span class="hljs-string">"Alice"</span>, <span class="hljs-number">90</span>, <span class="hljs-number">88</span>, <span class="hljs-number">76</span>),
+    (<span class="hljs-string">"Bob"</span>, <span class="hljs-number">78</span>, <span class="hljs-number">92</span>, <span class="hljs-number">85</span>),
+    (<span class="hljs-string">"Charlie"</span>, <span class="hljs-number">86</span>, <span class="hljs-number">80</span>, <span class="hljs-number">94</span>),
+    (<span class="hljs-string">"David"</span>, <span class="hljs-number">92</span>, <span class="hljs-number">88</span>, <span class="hljs-number">78</span>),
+)
+</div></code></pre>
+<p>After:</p>
+<pre class="hljs"><code><div>(
+    (<span class="hljs-string">"Alice"</span>, <span class="hljs-number">90</span>, <span class="hljs-number">88</span>, <span class="hljs-number">76</span>),
+    (<span class="hljs-string">"Bob"</span>, <span class="hljs-number">78</span>, <span class="hljs-number">92</span>, <span class="hljs-number">85</span>),
+    (<span class="hljs-string">"Charlie"</span>, <span class="hljs-number">86</span>, <span class="hljs-number">80</span>, <span class="hljs-number">94</span>),
+    (<span class="hljs-string">"David"</span>, <span class="hljs-number">92</span>, <span class="hljs-number">88</span>, <span class="hljs-number">78</span>),
+    (<span class="hljs-string">"Eve"</span>, <span class="hljs-number">95</span>, <span class="hljs-number">90</span>, <span class="hljs-number">88</span>)
+)
+</div></code></pre>
+<p>A</p>
+<pre class="hljs"><code><div>new_student_scores = (<span class="hljs-string">"Eve"</span>, <span class="hljs-number">95</span>, <span class="hljs-number">90</span>, <span class="hljs-number">88</span>)
+student_scores = student_scores + (new_student_scores,)
+
+</div></code></pre>
+<p>B</p>
+<pre class="hljs"><code><div>student_scores = student_scores + [<span class="hljs-string">"Eve"</span>, <span class="hljs-number">95</span>, <span class="hljs-number">90</span>, <span class="hljs-number">88</span>]
+</div></code></pre>
+<p>C</p>
+<pre class="hljs"><code><div>student_scores.insert(<span class="hljs-number">4</span>, (<span class="hljs-string">"Eve"</span>, <span class="hljs-number">95</span>, <span class="hljs-number">90</span>, <span class="hljs-number">88</span>))
+</div></code></pre>
+<p><strong>ANSWER</strong>: A</p>
+<p>option b Incorrect - This will concatenate a list with the student_scores tuple, which will result in a TypeError.
+option c Incorrect - This will insert the new student's scores at a specific index in the student_scores tuple, which will shift the existing elements to the right. This will result in an incorrect order of the students' scores</p>
+<p><strong>ANSWER</strong></p>
+<h2 id="question-4">Question 4</h2>
+<p>What does the <code>time.time()</code> function return?</p>
+<p>A.  The current time in milliseconds since the epoch.<br>
+B.  The current time in microseconds since the epoch.<br>
+C.  The current time in seconds since the epoch.<br>
+D.  The current time in nanoseconds since the epoch.</p>
+<p><strong>ANSWER</strong>: c. The current time in seconds since the epoch.</p>
+<p><strong>ANSWER</strong></p>
+<h2 id="question-5">Question 5</h2>
+<p>For the following code, which of the following is correct?</p>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Pizza</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, ingredients)</span>:</span>
+        self.ingredients = ingredients
+
+<span class="hljs-meta">    @staticmethod</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">is_valid_ingredient</span><span class="hljs-params">(ingredient)</span>:</span>
+        valid_ingredients = [<span class="hljs-string">"cheese"</span>, <span class="hljs-string">"tomato"</span>, <span class="hljs-string">"pepperoni"</span>, <span class="hljs-string">"mushrooms"</span>, <span class="hljs-string">"onions"</span>]
+        <span class="hljs-keyword">return</span> ingredient.lower() <span class="hljs-keyword">in</span> valid_ingredients
+
+<span class="hljs-meta">    @classmethod</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">margherita</span><span class="hljs-params">(cls)</span>:</span>
+        <span class="hljs-keyword">return</span> cls([<span class="hljs-string">"cheese"</span>, <span class="hljs-string">"tomato"</span>])
+
+<span class="hljs-meta">    @classmethod</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">pepperoni</span><span class="hljs-params">(cls)</span>:</span>
+        <span class="hljs-keyword">return</span> cls([<span class="hljs-string">"cheese"</span>, <span class="hljs-string">"tomato"</span>, <span class="hljs-string">"pepperoni"</span>])
+
+<span class="hljs-meta">    @classmethod</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">vegetarian</span><span class="hljs-params">(cls)</span>:</span>
+        <span class="hljs-keyword">return</span> cls([<span class="hljs-string">"cheese"</span>, <span class="hljs-string">"tomato"</span>, <span class="hljs-string">"mushrooms"</span>, <span class="hljs-string">"onions"</span>])
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__str__</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-string">f"A pizza with <span class="hljs-subst">{<span class="hljs-string">', '</span>.join(self.ingredients)}</span>"</span>
+</div></code></pre>
+<hr>
+<p>A</p>
+<p>The output of the following:</p>
+<pre class="hljs"><code><div>print(Pizza.is_valid_ingredient(<span class="hljs-string">"Cheese"</span>))  
+print(Pizza.is_valid_ingredient(<span class="hljs-string">"Sausage"</span>))  
+</div></code></pre>
+<p>is</p>
+<pre class="hljs"><code><div>False
+True
+</div></code></pre>
+<p>B</p>
+<p>The output of the following:</p>
+<pre class="hljs"><code><div>margherita = Pizza.margherita()
+pepperoni = Pizza.pepperoni()
+vegetarian = Pizza.vegetarian()
+
+print(margherita)  
+print(pepperoni)  
+print(vegetarian)  
+</div></code></pre>
+<p>is</p>
+<pre class="hljs"><code><div>A pizza with cheese, tomato
+A pizza with cheese, tomato, pepperoni
+A pizza with cheese, tomato, mushrooms, onions
+</div></code></pre>
+<p><strong>ANSWER</strong> is B.</p>
+<p><strong>ANSWER</strong></p>
+<h2 id="question-6">Question 6</h2>
+<p>What is the output of the following code?</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add_student</span><span class="hljs-params">(scores, name, *new_scores)</span>:</span>
+    <span class="hljs-string">"""
+    A function that adds a new student's scores to a list of tuples.
+    """</span>
+    scores.append((name,) + new_scores)
+    <span class="hljs-keyword">return</span> scores
+
+
+student_scores = [
+    (<span class="hljs-string">"Alice"</span>, <span class="hljs-number">80</span>, <span class="hljs-number">85</span>, <span class="hljs-number">90</span>),
+    (<span class="hljs-string">"Bob"</span>, <span class="hljs-number">75</span>, <span class="hljs-number">90</span>, <span class="hljs-number">85</span>),
+    (<span class="hljs-string">"Charlie"</span>, <span class="hljs-number">90</span>, <span class="hljs-number">85</span>, <span class="hljs-number">95</span>),
+    (<span class="hljs-string">"David"</span>, <span class="hljs-number">85</span>, <span class="hljs-number">80</span>, <span class="hljs-number">90</span>),
+    (<span class="hljs-string">"Eve"</span>, <span class="hljs-number">95</span>, <span class="hljs-number">90</span>, <span class="hljs-number">88</span>),
+]
+
+
+print(
+    id(student_scores) 
+    == 
+    id(add_student(student_scores, <span class="hljs-string">"Frank"</span>, <span class="hljs-number">70</span>, <span class="hljs-number">80</span>, <span class="hljs-number">75</span>))
+    )
+</div></code></pre>
+<p>A.  True<br>
+B.  False</p>
+<p><strong>ANSWER</strong>: A. True</p>
+<p><strong>ANSWER</strong></p>
+<h2 id="question-7">Question 7</h2>
+<p>What is the output of the following code?</p>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Animal</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, name)</span>:</span>
+        self.name = name
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">speak</span><span class="hljs-params">(self)</span>:</span>
+        print(<span class="hljs-string">f"<span class="hljs-subst">{self.name}</span> makes a sound"</span>)
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dog</span><span class="hljs-params">(Animal)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, name, breed)</span>:</span>
+        super().__init__(name)
+        self.breed = breed
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">speak</span><span class="hljs-params">(self)</span>:</span>
+        super().speak()
+        print(<span class="hljs-string">f"<span class="hljs-subst">{self.name}</span> barks"</span>)
+
+my_dog = Dog(<span class="hljs-string">"Fido"</span>, <span class="hljs-string">"Labrador"</span>)
+my_dog.speak()
+</div></code></pre>
+<p>A</p>
+<pre class="hljs"><code><div>Fido barks  
+Fido makes a sound
+</div></code></pre>
+<p>B</p>
+<pre class="hljs"><code><div>Fido makes a sound  
+Fido barks
+</div></code></pre>
+<p>C</p>
+<pre class="hljs"><code><div>Fido barks
+</div></code></pre>
+<p>D</p>
+<pre class="hljs"><code><div>Fido makes a sound
+</div></code></pre>
+<p><strong>ANSWER</strong>: B. Fido makes a sound Fido barks</p>
+<p><strong>ANSWER</strong></p>
+<h2 id="question-8">Question 8</h2>
+<p>The following code is an example of _______ ?</p>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dog</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> 
+    
+    <span class="hljs-title">speak</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-string">"Woof!"</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Cat</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">speak</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-string">"Meow!"</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Duck</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">speak</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-string">"Quack!"</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">make_animal_speak</span><span class="hljs-params">(animal)</span>:</span>
+    <span class="hljs-keyword">return</span> animal.speak()
+
+dog = Dog()
+cat = Cat()
+duck = Duck()
+
+print(make_animal_speak(dog))  <span class="hljs-comment"># Outputs: Woof!</span>
+print(make_animal_speak(cat))  <span class="hljs-comment"># Outputs: Meow!</span>
+print(make_animal_speak(duck)) <span class="hljs-comment"># Outputs: Quack!</span>
+</div></code></pre>
+<p>A.  Abstraction<br>
+B.  Inheritance<br>
+C.  Duck Typing<br>
+D.  Encapsulation</p>
+<p><strong>ANSWER</strong>: C. Duck Typing</p>
+<p><strong>ANSWER</strong></p>
+<h2 id="question-9">Question 9</h2>
+<p>For the following code, which of the following is correct?</p>
+<pre class="hljs"><code><div>x = <span class="hljs-number">5</span>  
+x <span class="hljs-keyword">is</span> an integer
+y = <span class="hljs-string">"10"</span>  
+z = x + y
+</div></code></pre>
+<p>A.  z value will be 15<br>
+B.  This code will generate an Error<br>
+C.  z value will be &quot;510&quot;<br>
+D.  z value will be &quot;15&quot;</p>
+<p><strong>ANSWER</strong>: B. This could will generate TypeError</p>
+<p><strong>ANSWER</strong></p>
+<h2 id="question-10">Question 10</h2>
+<p>What is the output of the following code?</p>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Point</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, x, y)</span>:</span>
+        self.x = x
+        self.y = y
+
+<span class="hljs-comment"># Creating two Point objects with the same values</span>
+point1 = Point(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>)
+point2 = Point(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>)
+
+<span class="hljs-keyword">if</span> point1 == point2:
+    print(<span class="hljs-string">"point1 and point2 are equal"</span>)
+<span class="hljs-keyword">else</span>:
+    print(<span class="hljs-string">"point1 and point2 are not equal"</span>)
+</div></code></pre>
+<p>A.  This code will generate a TypeError
+B.  point1 and point2 are equal
+C.  point1 and point2 are not equal</p>
+<p><strong>ANSWER</strong>: C. point1 and point2 are not equal</p>
+<p><strong>ANSWER</strong></p>
+<h2 id="question-11">Question 11</h2>
+<p>What is the output of the following code?</p>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Student</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, name, student_id)</span>:</span>
+        self.name = name
+        self.student_id = student_id
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__eq__</span><span class="hljs-params">(self, other)</span>:</span>
+        <span class="hljs-keyword">if</span> isinstance(other, Student):
+            <span class="hljs-keyword">return</span> self.student_id == other.student_id
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">False</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Classroom</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span>
+        self.students = []
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add_student</span><span class="hljs-params">(self, student)</span>:</span>
+        <span class="hljs-keyword">if</span> student <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> self.students:
+            self.students.append(student)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__contains__</span><span class="hljs-params">(self, student)</span>:</span>
+        <span class="hljs-keyword">return</span> student <span class="hljs-keyword">in</span> self.students
+
+<span class="hljs-comment"># Create student objects</span>
+alice = Student(<span class="hljs-string">"Alice"</span>, <span class="hljs-number">101</span>)
+bob = Student(<span class="hljs-string">"Bob"</span>, <span class="hljs-number">102</span>)
+carol = Student(<span class="hljs-string">"Carol"</span>, <span class="hljs-number">103</span>)
+
+<span class="hljs-comment"># Create a classroom and add students</span>
+classroom = Classroom()
+classroom.add_student(alice)
+classroom.add_student(bob)
+
+<span class="hljs-comment"># Check if a student is in the classroom</span>
+<span class="hljs-keyword">if</span> carol <span class="hljs-keyword">in</span> classroom:
+    print(<span class="hljs-string">f"<span class="hljs-subst">{carol.name}</span> is in the classroom."</span>)
+<span class="hljs-keyword">else</span>:
+    print(<span class="hljs-string">f"<span class="hljs-subst">{carol.name}</span> is not in the classroom."</span>)
+</div></code></pre>
+<p>A.  This code will generate a TypeError<br>
+B.  Carol is in the classroom.<br>
+C.  Carol is not in the classroom.</p>
+<p><strong>ANSWER</strong>: C. Carol is not in the classroom.</p>
+<p><strong>ANSWER</strong></p>
+<h2 id="question-12">Question 12</h2>
+<p>The following code is an example of what UML classes relationship?</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">from</span> abc <span class="hljs-keyword">import</span> ABC, abstractmethod
+
+<span class="hljs-comment"># Base class for a Database Connection</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DatabaseConnection</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">connect</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">pass</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">execute_query</span><span class="hljs-params">(self, query)</span>:</span>
+        <span class="hljs-keyword">pass</span>
+
+<span class="hljs-comment"># Class representing a User Management System</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserManagementSystem</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, db_connection)</span>:</span>
+        self.db_connection = db_connection
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">register_user</span><span class="hljs-params">(self, username, password)</span>:</span>
+        query = <span class="hljs-string">f"INSERT INTO users (username, password) VALUES ('<span class="hljs-subst">{username}</span>', '<span class="hljs-subst">{password}</span>')"</span>
+        self.db_connection.execute_query(query)
+
+<span class="hljs-comment"># Class representing a File Storage System</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FileStorageSystem</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, db_connection)</span>:</span>
+        self.db_connection = db_connection
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">store_file</span><span class="hljs-params">(self, filename, data)</span>:</span>
+        query = <span class="hljs-string">f"INSERT INTO files (filename, data) VALUES ('<span class="hljs-subst">{filename}</span>', '<span class="hljs-subst">{data}</span>')"</span>
+        self.db_connection.execute_query(query)
+
+<span class="hljs-comment"># Main program</span>
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">"__main__"</span>:
+    db = DatabaseConnection()
+    ums = UserManagementSystem(db)
+    fss = FileStorageSystem(db)
+
+</div></code></pre>
+<p>A.  Aggregation<br>
+B.  Dependency<br>
+C.  Inheritance<br>
+D.  Association</p>
+<p><strong>ANSWER</strong>: A. Aggregation</p>
+<p><strong>ANSWER</strong></p>
+<h2 id="question-13">Question 13</h2>
+<p>The following code is an example of what UML classes relationship?</p>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Student</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, name)</span>:</span>
+        self.name = name
+        self.courses = []  <span class="hljs-comment"># A list to store the courses the student is enrolled in</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">enroll_in_course</span><span class="hljs-params">(self, course)</span>:</span>
+        <span class="hljs-keyword">if</span> course <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> self.courses:
+            self.courses.append(course)
+            course.add_student(self)
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Course</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, name)</span>:</span>
+        self.name = name
+        self.students = []  <span class="hljs-comment"># A list to store the students enrolled in the course</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add_student</span><span class="hljs-params">(self, student)</span>:</span>
+        <span class="hljs-keyword">if</span> student <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> self.students:
+            self.students.append(student)
+            student.enroll_in_course(self)
+
+<span class="hljs-comment"># Create student and course objects</span>
+alice = Student(<span class="hljs-string">"Alice"</span>)
+bob = Student(<span class="hljs-string">"Bob"</span>)
+math_course = Course(<span class="hljs-string">"Mathematics"</span>)
+history_course = Course(<span class="hljs-string">"History"</span>)
+
+alice.enroll_in_course(math_course)
+bob.enroll_in_course(math_course)
+bob.enroll_in_course(history_course)
+
+<span class="hljs-comment"># Access and print the enrolled students for a course</span>
+<span class="hljs-keyword">for</span> student <span class="hljs-keyword">in</span> math_course.students:
+    print(<span class="hljs-string">f"<span class="hljs-subst">{student.name}</span> is enrolled in <span class="hljs-subst">{math_course.name}</span> course"</span>)
+
+<span class="hljs-comment"># Access and print the courses a student is enrolled in</span>
+<span class="hljs-keyword">for</span> course <span class="hljs-keyword">in</span> alice.courses:
+    print(<span class="hljs-string">f"<span class="hljs-subst">{alice.name}</span> is enrolled in <span class="hljs-subst">{course.name}</span>"</span>)
+
+</div></code></pre>
+<p>A.  Aggregation<br>
+B.  Dependency<br>
+C.  Composition<br>
+D.  Association</p>
+<p><strong>ANSWER</strong>
+D.
+<strong>ANSWER</strong></p>
+<h2 id="question-14">Question 14</h2>
+<p>Which of the following is correct regarding ABC classes?</p>
+<p>A. Abstract classes enforce that no objects can be created from them.</p>
+<p>B. Abstract classes enforce that all their methods must be implemented by concrete subclasses.</p>
+<p>C. Abstract classes automatically provide default implementations for their methods.</p>
+<p>D. Abstract classes allow creating objects, but their methods can be overridden by subclasses.</p>
+<p><strong>Answer</strong>: B. Abstract classes enforce that all their methods must be implemented by concrete subclasses.</p>
+<p><strong>ANSWER</strong></p>
+<h2 id="question-15">Question 15</h2>
+<p>What is the output of the following code?</p>
+<pre class="hljs"><code><div>original_list = [[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>], [<span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>]]
+
+another_list = original_list[:]
+
+another_list[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] = <span class="hljs-number">99</span>
+
+print(<span class="hljs-string">"Original List:"</span>, original_list)
+print(<span class="hljs-string">"Another List:"</span>, another_list)    
+</div></code></pre>
+<p>A</p>
+<pre class="hljs"><code><div>Original List: [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+Another List: [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+</div></code></pre>
+<p>B</p>
+<pre class="hljs"><code><div>Original List: [[99, 2, 3], [4, 5, 6], [7, 8, 9]]
+Another List: [[99, 2, 3], [4, 5, 6], [7, 8, 9]]
+</div></code></pre>
+<p>C</p>
+<pre class="hljs"><code><div>Original List: [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+Another List: [[99, 2, 3], [4, 5, 6], [7, 8, 9]]
+</div></code></pre>
+<p><strong>ANSWER</strong>:
+B</p>
+<pre class="hljs"><code><div>Original List: [[99, 2, 3], [4, 5, 6], [7, 8, 9]] 
+Another List: [[99, 2, 3], [4, 5, 6], [7, 8, 9]]
+</div></code></pre>
+<p><strong>ANSWER</strong></p>
+<h2 id="question-16">Question 16</h2>
+<p>What is the output of the following code</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">calculate</span><span class="hljs-params">(*args, **kwargs)</span>:</span>
+    total_sum = sum(args)
+    product = <span class="hljs-number">1</span>
+
+    <span class="hljs-keyword">for</span> key, value <span class="hljs-keyword">in</span> kwargs.items():
+        <span class="hljs-keyword">if</span> key == <span class="hljs-string">"add"</span>:
+            total_sum += value
+        <span class="hljs-keyword">elif</span> key == <span class="hljs-string">"multiply"</span>:
+            product *= value
+
+    <span class="hljs-keyword">return</span> total_sum, product
+
+
+result1 = calculate(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, add=<span class="hljs-number">10</span>, multiply=<span class="hljs-number">5</span>)
+result2 = calculate(<span class="hljs-number">5</span>, <span class="hljs-number">7</span>, add=<span class="hljs-number">20</span>)
+result3 = calculate(<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, add=<span class="hljs-number">3</span>, multiply=<span class="hljs-number">3</span>)
+
+print(<span class="hljs-string">"Result 1 - Sum:"</span>, result1[<span class="hljs-number">0</span>], <span class="hljs-string">"Product:"</span>, result1[<span class="hljs-number">1</span>])
+print(<span class="hljs-string">"Result 2 - Sum:"</span>, result2[<span class="hljs-number">0</span>], <span class="hljs-string">"Product:"</span>, result2[<span class="hljs-number">1</span>])
+print(<span class="hljs-string">"Result 3 - Sum:"</span>, result3[<span class="hljs-number">0</span>], <span class="hljs-string">"Product:"</span>, result3[<span class="hljs-number">1</span>])
+
+</div></code></pre>
+<p>A</p>
+<pre class="hljs"><code><div>Result <span class="hljs-number">1</span> - Sum: <span class="hljs-number">16</span> Product: <span class="hljs-number">5</span>
+Result <span class="hljs-number">2</span> - Sum: <span class="hljs-number">32</span> Product: <span class="hljs-number">1</span>
+Result <span class="hljs-number">3</span> - Sum: <span class="hljs-number">12</span> Product: <span class="hljs-number">3</span>
+</div></code></pre>
+<p>B</p>
+<pre class="hljs"><code><div>Result <span class="hljs-number">1</span> - Sum: <span class="hljs-number">6</span> Product: <span class="hljs-number">6</span>
+Result <span class="hljs-number">2</span> - Sum: <span class="hljs-number">12</span> Product: <span class="hljs-number">35</span>
+Result <span class="hljs-number">3</span> - Sum: <span class="hljs-number">9</span> Product: <span class="hljs-number">16</span>
+</div></code></pre>
+<p>C</p>
+<pre class="hljs"><code><div>Result <span class="hljs-number">1</span> - Sum: <span class="hljs-number">30</span> Product: <span class="hljs-number">25</span>
+Result <span class="hljs-number">2</span> - Sum: <span class="hljs-number">40</span> Product: <span class="hljs-number">400</span>
+Result <span class="hljs-number">3</span> - Sum: <span class="hljs-number">12</span> Product: <span class="hljs-number">81</span>
+</div></code></pre>
+<p><strong>ANSWER</strong>
+A</p>
+<pre class="hljs"><code><div>Result <span class="hljs-number">1</span> - Sum: <span class="hljs-number">16</span> Product: <span class="hljs-number">5</span>
+Result <span class="hljs-number">2</span> - Sum: <span class="hljs-number">32</span> Product: <span class="hljs-number">1</span>
+Result <span class="hljs-number">3</span> - Sum: <span class="hljs-number">12</span> Product: <span class="hljs-number">3</span>
+</div></code></pre>
+<p><strong>ANSWER</strong></p>
+<h2 id="question-17">Question 17</h2>
+<p>Which of the following units tests will not pass?</p>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BankAccount</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, account_number, owner, balance=<span class="hljs-number">0</span>)</span>:</span>
+        self.account_number = account_number
+        self.owner = owner
+        self.balance = balance
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">deposit</span><span class="hljs-params">(self, amount)</span>:</span>
+        <span class="hljs-keyword">if</span> amount &gt; <span class="hljs-number">0</span>:
+            self.balance += amount
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">"Amount to deposit must be positive."</span>)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">withdraw</span><span class="hljs-params">(self, amount)</span>:</span>
+        <span class="hljs-keyword">if</span> amount &gt; <span class="hljs-number">0</span> <span class="hljs-keyword">and</span> amount &lt;= self.balance:
+            self.balance -= amount
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">"Invalid withdrawal amount."</span>)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_balance</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> self.balance
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> unittest
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestBankAccount</span><span class="hljs-params">(unittest.TestCase)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">setUp</span><span class="hljs-params">(self)</span>:</span>
+        self.account = BankAccount(<span class="hljs-string">"123456"</span>, <span class="hljs-string">"John Doe"</span>, <span class="hljs-number">1000</span>)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_deposit</span><span class="hljs-params">(self)</span>:</span>
+        self.account.deposit(<span class="hljs-number">500</span>)
+        self.assertEqual(self.account.get_balance(), <span class="hljs-number">1500</span>)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_withdraw</span><span class="hljs-params">(self)</span>:</span>
+        self.account.withdraw(<span class="hljs-number">200</span>)
+        self.assertEqual(self.account.get_balance(), <span class="hljs-number">800</span>)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_withdraw_over_limit</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">with</span> self.assertRaises(ValueError):
+            self.account.withdraw(<span class="hljs-number">2000</span>)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_deposit_negative_amount</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">with</span> self.assertRaises(ValueError):
+            self.account.deposit(<span class="hljs-number">-100</span>)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_withdraw_negative_amount</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">with</span> self.assertRaises(ValueError):
+            self.account.withdraw(<span class="hljs-number">100</span>)
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">'__main__'</span>:
+    unittest.main()
+</div></code></pre>
+<p>A.  test_deposit<br>
+B.  test_withdraw<br>
+C.  test_deposit_negative_amount<br>
+D.  test_withdraw_over_limit</p>
+<p><strong>ANSWER:</strong> C. test_withdraw_negative_amount</p>
+<p><strong>ANSWER</strong></p>
+<h2 id="question-18">Question 18</h2>
+<p>For the following code, which of the following is a not possible execution path?</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">try</span>:
+    <span class="hljs-comment"># Code that may raise an exception</span>
+    num1 = int(input(<span class="hljs-string">"Enter a number: "</span>))
+    num2 = int(input(<span class="hljs-string">"Enter another number: "</span>))
+    result = num1 / num2
+
+<span class="hljs-keyword">except</span> ZeroDivisionError:
+    <span class="hljs-comment"># Handle the division by zero exception</span>
+    print(<span class="hljs-string">"Error: Division by zero is not allowed"</span>)
+
+<span class="hljs-keyword">except</span> ValueError:
+    <span class="hljs-comment"># Handle the ValueError (invalid input) exception</span>
+    print(<span class="hljs-string">"Error: Please enter valid numbers"</span>)
+
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-comment"># This block will be executed if no exception is raised</span>
+    print(<span class="hljs-string">f"Result of division: <span class="hljs-subst">{result}</span>"</span>)
+
+<span class="hljs-keyword">finally</span>:
+    <span class="hljs-comment"># This block is always executed, regardless of exceptions</span>
+    print(<span class="hljs-string">"Execution complete"</span>)
+
+<span class="hljs-comment"># Rest of the program continues here</span>
+
+</div></code></pre>
+<!-- valid -->
+<p>A.  try -&gt; else -&gt; finally<br>
+B.  try -&gt; except ZeroDivisionError -&gt; finally<br>
+C.  try -&gt; except ValueError -&gt; finally<br>
+D.  try -&gt; except ValueError -&gt; else -&gt; finally</p>
+<!-- invalid -->
+<!-- A  try -> except ZeroDivisionError -> else -> finally  -->
+<!-- A  try -> except ZeroDivisionError -> except ValueError -> else -> finally  -->
+<!-- A  try -> except ValueError -> except ZeroDivisionError -> else -> finally  -->
+<p><strong>ANSWER:</strong> D A.  try -&gt; except ValueError -&gt; else -&gt; finally</p>
+<p><strong>ANSWER</strong></p>
+<h2 id="question-19">Question 19</h2>
+<p>For the following file and code, what is the output of the code?</p>
+<p><code>data.json</code> File:</p>
+<pre class="hljs"><code><div>{
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"John Doe"</span>,
+    <span class="hljs-attr">"age"</span>: <span class="hljs-number">30</span>,
+    <span class="hljs-attr">"city"</span>: <span class="hljs-string">"New York"</span>
+}
+</div></code></pre>
+<p>Code:</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> json
+
+<span class="hljs-comment"># Specify the path to your JSON file</span>
+json_file_path = <span class="hljs-string">"data.json"</span>
+
+<span class="hljs-keyword">try</span>:
+    <span class="hljs-comment"># Open the JSON file for reading</span>
+    <span class="hljs-keyword">with</span> open(json_file_path, <span class="hljs-string">"r"</span>) <span class="hljs-keyword">as</span> json_file:
+        <span class="hljs-comment"># Load JSON data from the file into a Python dictionary</span>
+        data = json.load(json_file)
+
+        <span class="hljs-comment"># Access the data</span>
+        name = data[<span class="hljs-string">"name"</span>]
+        age = data[<span class="hljs-string">"age"</span>]
+        city = data[<span class="hljs-string">"city"</span>]
+
+        <span class="hljs-comment"># Perform operations with the JSON data</span>
+        print(<span class="hljs-string">f"Name: <span class="hljs-subst">{name}</span>"</span>)
+        print(<span class="hljs-string">f"Age: <span class="hljs-subst">{age}</span>"</span>)
+        print(<span class="hljs-string">f"City: <span class="hljs-subst">{citi}</span>"</span>)
+
+<span class="hljs-keyword">except</span> FileNotFoundError:
+    print(<span class="hljs-string">f"File '<span class="hljs-subst">{json_file_path}</span>' not found."</span>)
+<span class="hljs-keyword">except</span> json.JSONDecodeError:
+    print(<span class="hljs-string">"Error decoding JSON data."</span>)
+<span class="hljs-keyword">except</span> KeyError <span class="hljs-keyword">as</span> e:
+    print(<span class="hljs-string">f"KeyError: <span class="hljs-subst">{e}</span> is missing in the JSON data."</span>)
+<span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:
+    print(<span class="hljs-string">f"An error occurred: <span class="hljs-subst">{e}</span>"</span>)
+</div></code></pre>
+<p>A</p>
+<pre class="hljs"><code><div>An error occurred: name 'citi' is not defined
+</div></code></pre>
+<p>B</p>
+<pre class="hljs"><code><div>Name: John Doe
+Age: 30
+City: New York
+</div></code></pre>
+<!-- A  
+
+```
+File 'data.json' not found.
+```
+ -->
+<p>C</p>
+<pre class="hljs"><code><div>Error decoding JSON data.
+</div></code></pre>
+<p>D</p>
+<pre class="hljs"><code><div>KeyError: 'citi' is missing in the JSON data.
+</div></code></pre>
+<p><strong>ANSWER:</strong> A. An error occurred: name 'citi' is not defined</p>
+<p><strong>ANSWER</strong></p>
+<h2 id="question-20">Question 20</h2>
+<p>Which of the following statements describes the code presented below?</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">from</span> enum <span class="hljs-keyword">import</span> Enum
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Color</span><span class="hljs-params">(Enum)</span>:</span>
+    RED = <span class="hljs-number">1</span>
+    GREEN = <span class="hljs-number">2</span>
+    BLUE = <span class="hljs-number">2</span>  
+</div></code></pre>
+<p>A.  This code will generate a ValueError<br>
+B.  This code will generate a TypeError<br>
+C.  This code will generate a NameError<br>
+D.  No error will be generated</p>
+<p><strong>ANSWER</strong>
+D. No error will be generated
+<strong>ANSWER</strong></p>
+<h2 id="question-21">Question 21</h2>
+<p>What is the output of the following code?</p>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SomeIterator</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, limit)</span>:</span>
+        self.current = limit
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__iter__</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> self
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__next__</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">if</span> self.current &gt;= <span class="hljs-number">1</span>:
+            result = self.current**<span class="hljs-number">2</span>
+            self.current -= <span class="hljs-number">2</span>
+            <span class="hljs-keyword">return</span> result
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-keyword">raise</span> StopIteration
+        
+<span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> SomeIterator(<span class="hljs-number">5</span>):
+    print(x)
+
+</div></code></pre>
+<p>A</p>
+<pre class="hljs"><code><div>25
+16
+9
+4
+1
+</div></code></pre>
+<p>B</p>
+<pre class="hljs"><code><div>25
+9
+1
+</div></code></pre>
+<p>C</p>
+<pre class="hljs"><code><div>1
+4
+9
+16
+25
+</div></code></pre>
+<p>D</p>
+<pre class="hljs"><code><div>1
+9
+25
+</div></code></pre>
+<p><strong>ANSWER:</strong> B</p>
+<pre class="hljs"><code><div>25
+9
+1
+</div></code></pre>
+<p><strong>ANSWER</strong></p>
+<h2 id="question-22">Question 22</h2>
+<p>All the following are possible outputs of the following code, except one. Which one?</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> random
+
+a_list = [num <span class="hljs-keyword">for</span> num <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>, <span class="hljs-number">101</span>) <span class="hljs-keyword">if</span> str(num) == str(num)[::<span class="hljs-number">-1</span>]
+]
+<span class="hljs-comment"># Choose a random number from the list</span>
+random_number = random.choice(a_list)
+print(random_number)
+
+</div></code></pre>
+<p>A.  99<br>
+B.  7<br>
+C.  10<br>
+D.  8</p>
+<p><strong>ANSWER:</strong> C. 10</p>
+<p><strong>ANSWER</strong></p>
+<h2 id="question-23">Question 23</h2>
+<p>What is the output of the following code?</p>
+<pre class="hljs"><code><div><span class="hljs-comment"># Define a simple function</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">greet</span><span class="hljs-params">(name)</span>:</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">f"Hello, <span class="hljs-subst">{name}</span>!"</span>
+
+<span class="hljs-comment"># Assign the function to a variable</span>
+greet_function = greet
+greet_function(<span class="hljs-string">"Ben"</span>)
+print(greet_function.__name__)
+
+</div></code></pre>
+<p>A</p>
+<pre class="hljs"><code><div>greet_function 
+
+</div></code></pre>
+<p>B</p>
+<pre class="hljs"><code><div>greet 
+</div></code></pre>
+<p>C</p>
+<pre class="hljs"><code><div>&lt;<span class="hljs-class"><span class="hljs-keyword">class</span> '<span class="hljs-title">function</span>'&gt;" 
+</span></div></code></pre>
+<p>D</p>
+<pre class="hljs"><code><div>Hello, Ben!
+</div></code></pre>
+<p><strong>ANSWER:</strong> B. greet</p>
+<p><strong>ANSWER</strong></p>
+<h2 id="question-24">Question 24</h2>
+<p>[True/False]</p>
+<p>All the following are the equivalent.</p>
+<pre class="hljs"><code><div>squared_numbers = (x**<span class="hljs-number">2</span> <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>, <span class="hljs-number">6</span>))
+
+<span class="hljs-keyword">for</span> square <span class="hljs-keyword">in</span> squared_numbers:
+    print(square)
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">generate_squares</span><span class="hljs-params">(start, end)</span>:</span>
+    <span class="hljs-keyword">return</span> (x**<span class="hljs-number">2</span> <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> range(start, end + <span class="hljs-number">1</span>))
+
+squared_numbers = generate_squares(<span class="hljs-number">1</span>, <span class="hljs-number">5</span>)
+
+<span class="hljs-keyword">for</span> square <span class="hljs-keyword">in</span> squared_numbers:
+    print(square)
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">generate_squares</span><span class="hljs-params">(start, end)</span>:</span>
+    <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> range(start, end + <span class="hljs-number">1</span>):
+        <span class="hljs-keyword">yield</span> x**<span class="hljs-number">2</span>
+
+squared_numbers = generate_squares(<span class="hljs-number">1</span>, <span class="hljs-number">5</span>)
+
+<span class="hljs-keyword">for</span> square <span class="hljs-keyword">in</span> squared_numbers:
+    print(square)
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">generate_squares</span><span class="hljs-params">(start, end)</span>:</span>
+    <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> range(start, end + <span class="hljs-number">1</span>):
+        <span class="hljs-keyword">yield</span> x**<span class="hljs-number">2</span>
+
+squared_numbers = generate_squares(<span class="hljs-number">1</span>, <span class="hljs-number">5</span>)
+
+<span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:
+    <span class="hljs-keyword">try</span>:
+        square = next(squared_numbers)
+        print(square)
+    <span class="hljs-keyword">except</span> StopIteration:
+        <span class="hljs-keyword">break</span>
+</div></code></pre>
+<p>A.  True
+B.  False</p>
+<p><strong>ANSWER:</strong> A. True</p>
+<p><strong>ANSWER</strong></p>
+<h2 id="question-25">Question 25</h2>
+<p>How to write the following comprehension using lambda function?</p>
+<pre class="hljs"><code><div>numbers = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>, <span class="hljs-number">10</span>]
+
+another_list = [x <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> numbers <span class="hljs-keyword">if</span> x % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>]
+
+print(another_list)
+</div></code></pre>
+<p>A</p>
+<pre class="hljs"><code><div>another_list = list(map(<span class="hljs-keyword">lambda</span> x: x * <span class="hljs-number">2</span>, numbers))
+</div></code></pre>
+<p>B</p>
+<pre class="hljs"><code><div>another_list = list(filter(<span class="hljs-keyword">lambda</span> x: x % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>, numbers))
+</div></code></pre>
+<p>C</p>
+<pre class="hljs"><code><div>another_list = map(<span class="hljs-keyword">lambda</span> x: x % <span class="hljs-number">2</span>, numbers)
+</div></code></pre>
+<p>D</p>
+<pre class="hljs"><code><div>another_list = <span class="hljs-keyword">lambda</span> x: x % <span class="hljs-number">2</span>, numbers
+</div></code></pre>
+<p><strong>ANSWER</strong>
+B. another_list = list(filter(lambda x: x % 2 == 0, numbers))
+<strong>ANSWER</strong></p>
+<h2 id="question-26">Question 26</h2>
+<p>For the following code and profiling output, which of the following is correct?</p>
+<p><code>exmple.py</code> file:</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fibonacci</span><span class="hljs-params">(n)</span>:</span>
+    <span class="hljs-keyword">if</span> n &lt;= <span class="hljs-number">0</span>:
+        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>
+    <span class="hljs-keyword">elif</span> n == <span class="hljs-number">1</span>:
+        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>
+    <span class="hljs-keyword">else</span>:
+        <span class="hljs-keyword">return</span> fibonacci(n - <span class="hljs-number">1</span>) + fibonacci(n - <span class="hljs-number">2</span>)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>:</span>
+    result = fibonacci(<span class="hljs-number">30</span>)
+    print(result)
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">"__main__"</span>:
+    main()
+</div></code></pre>
+<pre class="hljs"><code><div>         269258 function calls (4 primitive calls) in 0.299 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+  269255/1    0.299    0.000    0.299    0.299 example.py:2(fibonacci)
+        1    0.000    0.000    0.299    0.299 example.py:9(main)
+        1    0.000    0.000    0.000    0.000 example.py:9(&lt;module&gt;)
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.exec}
+</div></code></pre>
+<p>A.  The fibonacci function is called 269258 times<br>
+B.  The fibonacci function is called 269255 times<br>
+C.  The fibonacci function is called 1 time<br>
+D.  The fibonacci function is called 4 times</p>
+<p><strong>ANSWER:</strong> B. The fibonacci function is called 269255 times
+<strong>ANSWER</strong></p>
+
+</body>
+</html>
