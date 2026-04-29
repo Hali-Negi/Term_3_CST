@@ -1,0 +1,24 @@
+Python Quiz Compilation
+
+Question 1:
+Which of the following statements about Python iterators is FALSE?
+A. All iterators are iterables, but not all iterables are iterators.
+B. An iterator must implement both __iter__() and __next__() methods.
+C. An iterable is any object capable of returning its members one at a time, such as lists or tuples.
+D. Iterators in Python automatically reset once they reach the end of the sequence.
+Correct Answer: D
+
+Question 2:
+Which of the following does not demonstrate the use of a Python function as an object?
+A. Passing a function as an argument to another function
+B. Assigning a function to a variable
+C. Defining a class with a __call__() method
+Correct Answer: C
+
+Question 3:
+In the Observer pattern, which of the following is the primary responsibility of the 'core' or 'subject'?
+A. Execute the main program logic
+B. Automatically update the state of all observers whenever a change occurs in the core.
+C. Define the behavior of all observers
+D. Maintain a collection of observers without notifying them of any changes
+Correct Answer: B
